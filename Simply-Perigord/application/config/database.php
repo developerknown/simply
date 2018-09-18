@@ -68,21 +68,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | make active.  By default there is only one group (the 'default' group).
 |
 | The $query_builder variables lets you determine whether or not to load
-| the query builder class.
+| the query builder class. 'default db-> protectbox_clickrstop'new_israfind'pb-clickrstop-stag
 */
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'Simply-Perigord',
+	'hostname' => 'pbclickrstop.cvvq4j5rt662.us-east-2.rds.amazonaws.com',
+	'username' => 'clickrstop',
+	'password' => 'Samadder5#',
+	'database' => 'dev_protectbox_clickrstop',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => (ENVIRONMENT !== 'development'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+
+$db['db2'] = array(
+	'dsn'	=> '',
+	'hostname' => 'pbclickrstop.cvvq4j5rt662.us-east-2.rds.amazonaws.com',
+	'username' => 'clickrstop',
+	'password' => 'Samadder5#',
+	'database' => 'cnet_database',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'development'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
