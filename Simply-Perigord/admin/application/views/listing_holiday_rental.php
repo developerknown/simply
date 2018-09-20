@@ -9,7 +9,7 @@
     <meta name="keyword" content="slick, flat, dashboard, bootstrap, admin, template, theme, responsive, fluid, retina">
     <link rel="shortcut icon" href="javascript:;" type="image/png">
 
-    <title>Listing Sale Property | Simply</title>
+    <title>Listing Holiday Rental Property | Simply</title>
 	<?php $this->load->view('common/metalinks');?>
     <!--Data Table-->
     <link href="css/jquery.dataTables.css" rel="stylesheet">
@@ -32,7 +32,7 @@
             <!-- page head start-->
             <div class="page-head">
                 <h3 class="m-b-less">
-                    Listing Sale Property
+                    Listing Holiday Rental Property
                 </h3>
             </div>
             <!-- page head end-->
@@ -93,7 +93,7 @@
                                         </td>
                                         <td>
 											<input type="submit" class="btn btn-secondary" value="Delete" name="delete">
-											<a href="<?php echo base_url('add_sale_property');?>"class="btn btn-primary">Edit</a>
+											<a href="<?php echo base_url('add_holiday_rental');?>"class="btn btn-primary">Edit</a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -122,7 +122,5 @@
 <script src="js/dataTables.scroller.min.js"></script>
 <!--data table init-->
 <script src="js/data-table-init.js"></script>
-
-
 </body>
 </html>

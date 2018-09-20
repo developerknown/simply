@@ -62,3 +62,42 @@ $('.responsive-data-table').DataTable({
 //});
 
 
+$(function() {
+    var table = $('.row-details-data-table').DataTable({
+        "ajax": "data/objects.txt",
+        dom: '<"tbl-top clearfix"lfr>,t,<"tbl-footer clearfix"<"tbl-info pull-left"i><"tbl-pagin pull-right"p>>',
+        "columns": [{
+            "class": 'details-control',
+            "orderable": false,
+            "data": null,
+            "defaultContent": ''
+        }, {
+            "data": "name"
+        }, {
+            "data": "position"
+        }, {
+            "data": "office"
+        }, {
+            "data": "salary"
+        }],
+        "order": [
+            [1, 'asc']
+        ]
+    });
+
+    // Add event listener for opening and closing details
+    $('.row-details-data-table tbody').on('click', 'td.details-control', function() {
+        var tr = $(this).closest('tr');
+        var row = table.row(tr);
+
+        if (row.child.isShown()) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        } else {
+            // Open this row
+            row.child(format(row.data())).show();
+            tr.addClass('shown');
+        }
+    });
+});
