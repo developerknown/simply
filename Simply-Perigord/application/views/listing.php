@@ -7,8 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
 <title>Property List</title>
 
-<?php include('header-links.php'); ?>
-
+<?php $this->load->view("common/header-links.php");?>
 </head>
 
 <body class="page-template page-template-full-width page-template-full-width-php page page-id-318 mkd-core-1.0 mkdf-social-login-1.0 mkd-re-1.1.1 zuhaus child-child-ver-1.0.0 zuhaus-ver-1.1.1 mkdf-grid-1200 mkdf-sticky-header-on-scroll-up mkdf-dropdown-animate-height mkdf-header-standard mkdf-menu-area-shadow-disable mkdf-menu-area-in-grid-shadow-disable mkdf-menu-area-border-disable mkdf-menu-area-in-grid-border-disable mkdf-woocommerce-columns-3 mkdf-woo-normal-space mkdf-woo-pl-info-below-image mkdf-woo-single-thumb-below-image mkdf-woo-single-has-pretty-photo mkdf-default-mobile-header mkdf-sticky-up-mobile-header wpb-js-composer js-comp-ver-5.4.4 vc_responsive" itemscope itemtype="">
@@ -16,9 +15,7 @@
 <div class="mkdf-wrapper">
 <div class="mkdf-wrapper-inner">
 
-<?php
-include('header2.php');
-?>
+<?php $this->load->view("common/header2");?>
 
 <div class="mkdf-content" >
 <div class="mkdf-content-inner">
@@ -430,10 +427,12 @@ for ($x = 1; $x <= 8; $x++) {
 </div> <!-- close div.content_inner -->
 </div>  <!-- close div.content -->
 <?php
-include('footer.php')
+$this->load->view("common/footer");
 ?>
 </div> <!-- close div.mkdf-wrapper-inner  -->
 </div> <!-- close div.mkdf-wrapper -->		
-<?php include('footer-links.php'); ?>
+<?php 
+$this->load->view("common/footer-links");
+?>
 </body>
 </html>

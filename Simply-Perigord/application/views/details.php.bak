@@ -1240,8 +1240,6 @@ $this->load->view("common/footer");
 ?>
 </div> <!-- close div.mkdf-wrapper-inner  -->
 </div> <!-- close div.mkdf-wrapper -->
-<?php 
-$this->load->view("common/footer-links");
-?>
+<?php include('footer-links.php'); ?>
 </body>
 </html>
