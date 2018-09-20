@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'pbclickrstop.cvvq4j5rt662.us-east-2.rds.amazonaws.com',
-	'username' => 'clickrstop',
-	'password' => 'Samadder5#',
-	'database' => 'dev_protectbox_clickrstop',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'simply_perigod',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

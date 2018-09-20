@@ -12,10 +12,10 @@
 						<ul id="menu-main-menu" class="clearfix">
 							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>listing" class=""><span class="item_outer"><span class="item_text">Maintenance</span></span></a></li>
 							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>listing" class=""><span class="item_outer"><span class="item_text">Rental</span></span></a></li>
-							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>listing" class=""><span class="item_outer"><span class="item_text">Renovation</span></span></a></li>
-							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>listing" class=""><span class="item_outer"><span class="item_text">Sales</span></span></a></li>
-							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>listing" class=""><span class="item_outer"><span class="item_text">Weddings</span></span></a></li>
-							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="<?php  echo base_url();  ?>contact" class=""><span class="item_outer"><span class="item_text">Contact Us</span></span></a></li>
+							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="#" class=""><span class="item_outer"><span class="item_text">Renovation</span></span></a></li>
+							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="#" class=""><span class="item_outer"><span class="item_text">Sales</span></span></a></li>
+							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="#" class=""><span class="item_outer"><span class="item_text">Weddings</span></span></a></li>
+							<li id="nav-menu-item-1416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  narrow"><a href="#" class=""><span class="item_outer"><span class="item_text">Contact Us</span></span></a></li>
 						</ul>
 					</nav>
 				</div>
