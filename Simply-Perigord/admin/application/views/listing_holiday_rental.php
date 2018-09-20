@@ -43,6 +43,17 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <section class="panel">
+                             <?php
+                                if($this->session->flashdata('delete_rent_successfull')){
+                            ?>
+                                  <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('delete_rent_successfull');?></strong> </div>
+                            <?php
+                              }else if($this->session->flashdata('delete_rent_failed')){
+                            ?>
+                                   <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('delete_rent_failed');?></strong> </div>
+                            <?php
+                              }
+                            ?>
                             <!--<header class="panel-heading ">
                                 Column Visible Data Table
                                 <span class="tools pull-right">
@@ -54,48 +65,40 @@
                                 <table class="table colvis-data-table data-table">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            Sl No
-                                        </th>
-                                        <th>
-                                            Property Name
-                                        </th>
-                                        <th>
-                                            Property Location
-                                        </th>
-                                        <th>
-                                            Date
-                                        </th>
-                                        <th>
-                                            Status
-                                        </th>
-                                        <th>
-                                            Action
-                                        </th>
+                                        <th>Sl No</th>
+                                        <th>Property Name</th>
+                                        <th>Property Location</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th width="105px;">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                        $i = 1;
+                                        foreach($get_all_rental_property AS $fetch_each_property){
+                                    ?>
                                     <tr>
+                                        <td><?php echo $i;?></td>
+                                        <td><?php echo $fetch_each_property->name;?></td>
+                                        <td><?php echo $fetch_each_property->location;?></td>
+                                        <td><?php echo $fetch_each_property->booked_date;?></td>
+                                        <td><?php 
+                                            if($fetch_each_property->status == '1'){
+                                                echo "Active";
+                                            }else{
+                                                echo "Inactive";
+                                            }
+                                        ?></td>
                                         <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Ontario
-                                        </td>
-                                        <td>
-                                            Andrews
-                                        </td>
-                                        <td>
-                                            19/09/2018
-                                        </td>
-                                        <td>
-                                            Active
-                                        </td>
-                                        <td>
-											<input type="submit" class="btn btn-secondary" value="Delete" name="delete">
-											<a href="<?php echo base_url('add_holiday_rental');?>"class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url('listing_holiday_rental/delete_rental_id/');?><?php echo $fetch_each_property->holiday_rental_id?>" class="btn btn-default">Delete</a>
+                                            <a href="<?php echo base_url('edit_holiday_rental/');?><?php echo $fetch_each_property->holiday_rental_id?>" class="btn btn-primary">Edit</a>
                                         </td>
                                     </tr>
+                                    <?php
+                                        $i++;
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

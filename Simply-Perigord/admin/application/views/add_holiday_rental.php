@@ -12,17 +12,16 @@
     <title>Add Holiday Rental Property | Simply</title>
 	<?php $this->load->view('common/metalinks');?>
     <!--bootstrap-fileinput-master-->
-    <link rel="stylesheet" type="text/css" href="css/fileinput.css" />
-	<!--bootstrap picker-->
-    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
-    <link rel="stylesheet" type="text/css" href="css/timepicker.css"/>
-    <link rel="stylesheet" type="text/css" href="css/colorpicker.css"/>
-    <link rel="stylesheet" type="text/css" href="css/daterangepicker-bs3.css"/>
-    <link rel="stylesheet" type="text/css" href="css/datetimepicker.css"/>
-    <link rel="stylesheet" type="text/css" href="css/multiple-image-upload.css"/>
-
-	<!--iCheck-->
-    <link href="css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/fileinput.css');?>" />
+    <!--bootstrap picker-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datepicker.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/timepicker.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/colorpicker.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/daterangepicker-bs3.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetimepicker.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/multiple-image-upload.css');?>"/>
+    <!--iCheck-->
+    <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet">
 </head>
 
 <body class="sticky-header">
@@ -331,24 +330,23 @@ function preview_images()
 }
 </script>
 <!--bootstrap-fileinput-master-->
-<script type="text/javascript" src="js/fileinput.js"></script>
-<script type="text/javascript" src="js/file-input-init.js"></script>
-
+<script type="text/javascript" src="<?php echo base_url('js/fileinput.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/file-input-init.js');?>"></script>
 <!--bootstrap picker-->
-<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/daterangepicker.js"></script>
-<script type="text/javascript" src="js/bootstrap-colorpicker.js"></script>
-<script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
-<script type="text/javascript" src="js/multiple-image-upload.js"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bootstrap-datepicker.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bootstrap-datetimepicker.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/moment.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/daterangepicker.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bootstrap-colorpicker.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/bootstrap-timepicker.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/multiple-image-upload.js');?>"></script>
 
 <!--picker initialization-->
-<script src="js/picker-init.js"></script>
+<script src="<?php echo base_url('js/picker-init.js');?>"></script>
 
 <!--Icheck-->
-<script src="js/icheck.min.js"></script>
+<script src="<?php echo base_url('js/icheck.min.js');?>"></script>
 <!--icheck init-->
-<script src="js/icheck-init.js"></script>
+<script src="<?php echo base_url('js/icheck-init.js');?>"></script>
 </body>
 </html>

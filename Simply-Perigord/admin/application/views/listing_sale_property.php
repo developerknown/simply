@@ -12,11 +12,11 @@
     <title>Listing Sale Property | Simply</title>
 	<?php $this->load->view('common/metalinks');?>
     <!--Data Table-->
-    <link href="css/jquery.dataTables.css" rel="stylesheet">
-    <link href="css/dataTables.tableTools.css" rel="stylesheet">
-    <link href="css/dataTables.colVis.min.css" rel="stylesheet">
-    <link href="css/dataTables.responsive.css" rel="stylesheet">
-    <link href="css/dataTables.scroller.css" rel="stylesheet">   
+    <link href="<?php echo base_url('css/jquery.dataTables.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/dataTables.tableTools.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/dataTables.colVis.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/dataTables.responsive.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('css/dataTables.scroller.css');?>" rel="stylesheet">   
 </head>
 
 <body class="sticky-header">
@@ -43,6 +43,17 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <section class="panel">
+                            <?php
+                                if($this->session->flashdata('delete_sale_successfull')){
+                            ?>
+                                  <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('delete_sale_successfull');?></strong> </div>
+                            <?php
+                              }else if($this->session->flashdata('delete_sale_failed')){
+                            ?>
+                                   <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('delete_sale_failed');?></strong> </div>
+                            <?php
+                              }
+                            ?>
                             <!--<header class="panel-heading ">
                                 Column Visible Data Table
                                 <span class="tools pull-right">
@@ -59,22 +70,35 @@
                                         <th>Property Location</th>
                                         <th>Date</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th width="105px;">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                        $i = 1;
+                                        foreach($get_all_sale_property AS $fetch_each_property){
+                                    ?>
                                     <tr>
-                                        
-                                        <td>1</td>
-                                        <td>Ontario</td>
-                                        <td>Andrews</td>
-                                        <td>19/09/2018</td>
-                                        <td>Active</td>
+                                        <td><?php echo $i;?></td>
+                                        <td><?php echo $fetch_each_property->name;?></td>
+                                        <td><?php echo $fetch_each_property->location;?></td>
+                                        <td><?php echo $fetch_each_property->date;?></td>
+                                        <td><?php 
+                                            if($fetch_each_property->status == '1'){
+                                                echo "Active";
+                                            }else{
+                                                echo "Inactive";
+                                            }
+                                        ?></td>
                                         <td>
-											<input type="submit" class="btn btn-secondary" value="Delete" name="delete">
-											<a href="<?php echo base_url('add_sale_property');?>"class="btn btn-primary">Edit</a>
+											<a href="<?php echo base_url('listing_sale_property/delete_sale_id/');?><?php echo $fetch_each_property->property_sale_id?>" class="btn btn-default">Delete</a>
+                                            <a href="<?php echo base_url('edit_sale_property/');?><?php echo $fetch_each_property->property_sale_id?>" class="btn btn-primary">Edit</a>
                                         </td>
                                     </tr>
+                                    <?php
+                                        $i++;
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -10,9 +10,9 @@ class Listing_sale_property_m extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
-	public function delete_brand_id($del_brand_id){
-		$this->db->where('brand_id', $del_brand_id);
-		$this->db->delete('brand');
+	public function delete_prop_sale_id($del_sale_id){
+		$this->db->where('property_sale_id', $del_sale_id);
+		$this->db->delete('property_sale');
 		return true;
 	}
 

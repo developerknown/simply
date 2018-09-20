@@ -9,18 +9,18 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="javascript:;" type="image/png">
 
-    <title>Add SALE Property | Simply</title>
+    <title>Edit SALE Property | Simply</title>
 	<?php $this->load->view('common/metalinks');?>
     <!--bootstrap-fileinput-master-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/fileinput.css');?>" />
-    <!--bootstrap picker-->
+	<!--bootstrap picker-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datepicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/timepicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/colorpicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/daterangepicker-bs3.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetimepicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/multiple-image-upload.css');?>"/>
-    <!--iCheck-->
+	<!--iCheck-->
     <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet">
 </head>
 
@@ -37,7 +37,7 @@
             <!-- page head start-->
             <div class="page-head">
                 <h3 class="m-b-less">
-                    Add Property for SALE 
+                    Edit Property for SALE 
                 </h3>
             </div>
             <!-- page head end-->
@@ -50,35 +50,36 @@
                     <section class="panel">
                         <div class="panel-body">
                             <?php
-                                if($this->session->flashdata('add_sale_prop_successfull')){
+                                if($this->session->flashdata('update_sale_prop_successfull')){
                             ?>
-                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('add_sale_prop_successfull');?></strong> </div>
+                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('update_sale_prop_successfull');?></strong> </div>
                             <?php
-                                }else if($this->session->flashdata('add_sale_prop_failed')){
+                                }else if($this->session->flashdata('update_sale_prop_failed')){
                             ?>
-                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('add_sale_prop_failed');?></strong> </div>
+                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('update_sale_prop_failed');?></strong> </div>
                             <?php
                                 }
                             ?>
-                            <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url('add_sale_property/add_new_sale_property');?>" enctype="multipart/form-data">
+                            <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url('edit_sale_property/edit_defined_sale_property');?>" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="inputpropname" class="col-lg-2 col-sm-2 control-label">Property Name</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="inputpropname" placeholder="Property Name" name="prop_name">
+                                        <input type="text" class="form-control" id="inputpropname" placeholder="Property Name" name="prop_name" value="<?php echo $get_all_sale_property->name;?>">
+                                        <input type="hidden" class="form-control" name="sale_prop_id" value="<?php echo $get_all_sale_property->property_sale_id;?>">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label for="inputproplocation" class="col-lg-2 col-sm-2 control-label">Property Location</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="inputproplocation" placeholder="Property Location" name="prop_location">
+                                        <input type="text" class="form-control" id="inputproplocation" placeholder="Property Location" name="prop_location" value="<?php echo $get_all_sale_property->location;?>">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label for="inputpropsize" class="col-lg-2 col-sm-2 control-label">Property Size</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Property Size" name="prop_size">
+                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Property Size" name="prop_size" value="<?php echo $get_all_sale_property->size;?>">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
@@ -86,10 +87,10 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Number of Bedrooms</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="bedroom">
-											<option value="">Please Select</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+											<option value="" <?php echo (($get_all_sale_property->bedrooms == '')?'selected':'')?>>Please Select</option>
+                                            <option value="1" <?php echo (($get_all_sale_property->bedrooms == '1')?'selected':'')?>>1</option>
+                                            <option value="2" <?php echo (($get_all_sale_property->bedrooms == '2')?'selected':'')?>>2</option>
+                                            <option value="3" <?php echo (($get_all_sale_property->bedrooms == '3')?'selected':'')?>>3</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -98,10 +99,10 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Number of Bathrooms</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="bathroom">
-											<option value="">Please Select</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+											<option value="" <?php echo (($get_all_sale_property->bathrooms == '')?'selected':'')?>>Please Select</option>
+                                            <option value="1" <?php echo (($get_all_sale_property->bathrooms == '1')?'selected':'')?>>1</option>
+                                            <option value="2" <?php echo (($get_all_sale_property->bathrooms == '2')?'selected':'')?>>2</option>
+                                            <option value="3" <?php echo (($get_all_sale_property->bathrooms == '3')?'selected':'')?>>3</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -110,9 +111,9 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Private Pool</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="private_pool">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
+											<option value=""<?php echo (($get_all_sale_property->private_pool == '')?'selected':'')?>>Please Select</option>
+                                            <option value="yes"<?php echo (($get_all_sale_property->private_pool == 'yes')?'selected':'')?>>Yes</option>
+                                            <option value="no"<?php echo (($get_all_sale_property->private_pool == 'no')?'selected':'')?>>No</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -121,9 +122,9 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Private Parking</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="private_parking">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
+											<option value=""<?php echo (($get_all_sale_property->private_parking == '')?'selected':'')?>>Please Select</option>
+                                            <option value="yes"<?php echo (($get_all_sale_property->private_parking == 'yes')?'selected':'')?>>Yes</option>
+                                            <option value="no"<?php echo (($get_all_sale_property->private_parking == 'no')?'selected':'')?>>No</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -132,9 +133,9 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Private Garden</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="private_garden">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
+											<option value=""<?php echo (($get_all_sale_property->private_garden == '')?'selected':'')?>>Please Select</option>
+                                            <option value="yes"<?php echo (($get_all_sale_property->private_garden == 'yes')?'selected':'')?>>Yes</option>
+                                            <option value="no"<?php echo (($get_all_sale_property->private_garden == 'no')?'selected':'')?>>No</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -143,9 +144,9 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Village House</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="village_house">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
+											<option value=""<?php echo (($get_all_sale_property->village_house == '')?'selected':'')?>>Please Select</option>
+                                            <option value="yes"<?php echo (($get_all_sale_property->village_house == 'yes')?'selected':'')?>>Yes</option>
+                                            <option value="no"<?php echo (($get_all_sale_property->village_house == 'no')?'selected':'')?>>No</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
@@ -154,9 +155,9 @@
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Rural Setting</label>
                                     <div class="col-lg-9">
                                         <select class="form-control m-b-10" name="rural_setting">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
+											<option value=""<?php echo (($get_all_sale_property->rural_setting == '')?'selected':'')?>>Please Select</option>
+                                            <option value="yes"<?php echo (($get_all_sale_property->rural_setting == 'yes')?'selected':'')?>>Yes</option>
+                                            <option value="no"<?php echo (($get_all_sale_property->rural_setting == 'no')?'selected':'')?>>No</option>
 										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
