@@ -5,7 +5,9 @@ class Listing_sale_property extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('listing_sale_property');
+		$this->load->model('listing_sale_property_m');
+		$data['get_all_sale_property'] = $this->listing_sale_property_m->fetch_sale_property();
+		$this->load->view('listing_sale_property',$data);
 	}
 
 }

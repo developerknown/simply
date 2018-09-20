@@ -54,43 +54,22 @@
                                 <table class="table colvis-data-table data-table">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            Sl No
-                                        </th>
-                                        <th>
-                                            Property Name
-                                        </th>
-                                        <th>
-                                            Property Location
-                                        </th>
-                                        <th>
-                                            Date
-                                        </th>
-                                        <th>
-                                            Status
-                                        </th>
-                                        <th>
-                                            Action
-                                        </th>
+                                        <th>Sl No</th>
+                                        <th>Property Name</th>
+                                        <th>Property Location</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Ontario
-                                        </td>
-                                        <td>
-                                            Andrews
-                                        </td>
-                                        <td>
-                                            19/09/2018
-                                        </td>
-                                        <td>
-                                            Active
-                                        </td>
+                                        
+                                        <td>1</td>
+                                        <td>Ontario</td>
+                                        <td>Andrews</td>
+                                        <td>19/09/2018</td>
+                                        <td>Active</td>
                                         <td>
 											<input type="submit" class="btn btn-secondary" value="Delete" name="delete">
 											<a href="<?php echo base_url('add_sale_property');?>"class="btn btn-primary">Edit</a>
