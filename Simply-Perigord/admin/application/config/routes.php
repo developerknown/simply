@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['listing_sale_property/(:num)'] = "listing_sale_property";
+$route['listing_holiday_rental/(:num)'] = "listing_holiday_rental";
+$route['edit_sale_property/(:num)'] = "edit_sale_property";
+
