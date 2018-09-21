@@ -278,7 +278,7 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                  <a itemprop="url" class="mkdf-pli-link mkdf-block-drag-link" href="<?php echo base_url();?>/details" target="_self">
+                                                  <a itemprop="url" class="mkdf-pli-link mkdf-block-drag-link" href="details.php" target="_self">
                                                   </a>
                                                 </div>
                                               </article>
