@@ -17,6 +17,17 @@ class Home_m extends CI_Model {
 		  return $query->row();
 	}
 
+	public function fetch_property_five(){
+		  $condition = array();
+		  $this->db->select('*');
+		  $this->db->from('holiday_rental');
+		  $this->db->join('holiday_rental_images','holiday_rental_images.holiday_rental_id = holiday_rental.holiday_rental_id');
+		  $this->db->where($condition);
+		  $this->db->limit(5);
+		  $query = $this->db->get();
+		  return $query->result();
+	}
+
 }
 
 /* End of file Edit_supplier_m.php */

@@ -205,27 +205,31 @@
                                               </div>
 
 											  <?php
-												for($i=1 ; $i<=5 ; $i++){
-													if($i==1){
+												$all_property_only_five = json_encode($all_property_five);
+												$decoded_five_all_property = json_decode($all_property_only_five,true);
+												
+												$key = 1;
+												foreach($all_property_five As $property){
+													if($key == 1){
 														$class = "mkdf-pl-item mkdf-item-space mkdf-pl-masonry-large-width mkdf-item-featured post-220 property type-property status-publish has-post-thumbnail hentry property-type-building property-feature-ac-heating property-feature-balcony property-feature-dishwasher property-feature-laundry-facilities property-feature-modern-kitchen property-feature-pet-friendly property-feature-storage-units property-feature-walk-in-closets property-feature-washerdryer property-status-just-sold property-county-california property-city-san-francisco property-neighborhood-chinatown property-tag-bright property-tag-comfortable property-tag-cost-effective property-tag-design property-tag-interior property-tag-listing property-tag-property property-tag-traditional";
 
 														$id = "220";
 													}
-													else if($i==2){
+													else if($key == 2){
 														$class = "mkdf-pl-item mkdf-item-space mkdf-pl-masonry-default mkdf-item-featured post-304 property type-property status-publish has-post-thumbnail hentry property-type-building property-feature-ac-heating property-feature-balcony property-feature-dishwasher property-feature-elevator property-feature-pet-friendly property-feature-storage-units property-feature-walk-in-closets property-feature-washerdryer property-status-for-sale property-county-new-york property-city-new-york property-neighborhood-astoria property-tag-colorful property-tag-comfortable property-tag-design property-tag-interior property-tag-listing property-tag-property property-tag-renovated property-tag-traditional";
 
 														$id = "304";
 													}
-													else if($i==3){
+													else if($key == 3){
 														$class = "mkdf-pl-item mkdf-item-space mkdf-pl-masonry-large-height mkdf-item-featured post-350 property type-property status-publish has-post-thumbnail hentry property-type-building property-feature-ac-heating property-feature-balcony property-feature-dishwasher property-feature-elevator property-feature-fitness-center property-feature-granite-countertops property-feature-laundry-facilities property-feature-modern-kitchen property-feature-pet-friendly property-feature-storage-units property-feature-walk-in-closets property-feature-washerdryer property-status-for-sale property-county-california property-city-san-diego property-neighborhood-mid-city property-tag-colorful property-tag-comfortable property-tag-design property-tag-housing property-tag-interior property-tag-listing property-tag-modern property-tag-renovated property-tag-traditional";
 
 														$id = "350";
 													}
-													else if($i==4){
+													else if($key == 4){
 														$class = "mkdf-pl-item mkdf-item-space mkdf-pl-masonry-default mkdf-item-featured post-394 property type-property status-publish has-post-thumbnail hentry property-type-building property-feature-ac-heating property-feature-balcony property-feature-dishwasher property-feature-elevator property-feature-fitness-center property-feature-granite-countertops property-feature-laundry-facilities property-feature-modern-kitchen property-feature-pool property-feature-storage-units property-feature-walk-in-closets property-feature-washerdryer property-status-for-rent property-county-california property-city-san-diego property-neighborhood-mid-city property-tag-colorful property-tag-comfortable property-tag-cost-effective property-tag-design property-tag-interior property-tag-listing property-tag-modern property-tag-spacious";
 
 														$id = "394";
-													}else if($i==5){
+													}else if($key == 5){
 														$class = "mkdf-pl-item mkdf-item-space mkdf-pl-masonry-large-width mkdf-item-featured post-431 property type-property status-publish has-post-thumbnail hentry property-type-building property-feature-ac-heating property-feature-balcony property-feature-dishwasher property-feature-elevator property-feature-fitness-center property-feature-granite-countertops property-feature-laundry-facilities property-feature-modern-kitchen property-feature-pet-friendly property-feature-storage-units property-feature-valet-parking property-feature-walk-in-closets property-feature-washerdryer property-status-for-rent property-county-florida property-city-miami property-neighborhood-brickell property-tag-colorful property-tag-comfortable property-tag-cost-effective property-tag-design property-tag-interior property-tag-listing property-tag-modern property-tag-property";
 
 														$id = "431";
@@ -236,7 +240,7 @@
                                                 <div class="mkdf-pl-item-inner">
                                                   <div class="mkdf-item-top-section">
                                                     <div class="mkdf-pli-image">
-                                                      <img itemprop="image" src="<?php  echo base_url();  ?>assets/images/property-13-featured-img-800x550.jpg" alt="Property Featured Image" />
+                                                      <img itemprop="image" src="<?php  echo base_url();  ?>admin/uploads/<?php echo $property->image;?>" alt="Property Featured Image" />
                                                     </div>    
                                                     <div class="mkdf-item-top-section-content">
                                                       <div class="mkdf-item-top-section-content-inner">
@@ -255,7 +259,7 @@
                                                           <div class="mkdf-item-info-bottom-left">
                                                             <h5 itemprop="name" class="mkdf-pli-title entry-title">
                                                               <a itemprop="url" href="#" target="_self">
-                                                                Rue de Bagnolet
+                                                                <?php echo $property->name;?>
                                                               </a>
                                                             </h5>                    
                                                             <div class="mkdf-item-address">
@@ -285,6 +289,7 @@
                                               </article>
 
                                               <?php
+												$key++;
 											  }
 											  ?>
 											  
