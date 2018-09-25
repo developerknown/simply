@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://ownspeech.in/bimal/simply/';
-$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/sep_2018/simply/Simply-Perigord/';
+$config['base_url'] = 'http://ownspeech.in/bimal/simply/admin/';
+//$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/sep_2018/simply/Simply-Perigord/';
 
 /*
 |--------------------------------------------------------------------------

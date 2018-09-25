@@ -25,7 +25,7 @@
                             <div class="mkdf-property-list-holder mkdf-pl-gallery mkdf-pl-layout-standard  mkdf-small-space mkdf-pl-with-map mkdf-pl-with-filter     mkdf-pl-active-filter-hidden mkdf-pl-properties-found mkdf-pl-four-columns mkdf-pl-pag-no-pagination   "  data-type="gallery" data-item-layout="standard" data-number-of-columns="4" data-space-between-items="small" data-number-of-items="20" data-enable-fixed-proportions="no" data-image-proportions="full" data-hide-active-filter="yes" data-order-by="menu_order" data-order="ASC" data-title-tag="h5" data-pagination-type="no-pagination" data-property-slider-on="no" data-enable-loop="yes" data-enable-autoplay="yes" data-slider-speed="5000" data-slider-speed-animation="600" data-enable-navigation="no" data-enable-map="yes" data-enable-filter="yes" data-enable-pagination="no" data-max-num-pages="1" data-next-page="2">
                               <div class="mkdf-property-list-items-part">
                                 <div class="mkdf-property-list-filter-part">
-
+								  <form name="advance_search_form" method="POST" action="<?php base_url();?>listing/advance_search">
                                   <div class="mkdf-filter-row mkdf-filter-section-st">
                                     <div class="mkdf-filter-section mkdf-filter-section-3 mkdf-section-status">
                                       <div class="mkdf-filter-status-holder" data-default-status="" data-status="">
@@ -33,15 +33,10 @@
                                           <span aria-hidden="true" class="mkdf-icon-ion-icon ion-ios-compose-outline">
                                           </span>
                                         </div>
-                                        <select class="mkdf-filter-statuses">
-                                          <option value="">All Properties
-                                          </option>
-                                          <option  value="24">For Rent
-                                          </option>
-                                          <option  value="23">For Sale
-                                          </option>
-                                          <option  value="25">Just Sold
-                                          </option>
+                                        <select class="mkdf-filter-statuses" name="property_typ">
+                                          <option value="">All Properties</option>
+                                          <option  value="rental">For Rent</option>
+                                          <option  value="sale">For Sale</option>
                                         </select>
                                       </div>
                                     </div>
@@ -310,20 +305,13 @@
                                     </div>
                                   </div>
                                   <div class="mkdf-filter-row mkdf-filter-section-action">
-                                    <button type="submit"  class="mkdf-btn mkdf-btn-medium mkdf-btn-solid mkdf-property-filter-button"  >    
+                                    <button type="submit" name="sub" class="mkdf-btn mkdf-btn-medium mkdf-btn-solid mkdf-property-filter-button"  >    
                                       <span class="mkdf-btn-text">Filter Results
                                       </span>
                                     </button>
-                                    <span class="mkdf-property-query-section">
-                                      <button type="submit" style="color: #000000" class="mkdf-btn mkdf-btn-medium mkdf-btn-outline mkdf-btn-custom-hover-color mkdf-property-save-search-button" data-hover-color="#000000" >   
-                                        <span class="mkdf-btn-text">Save Search
-                                        </span>
-                                      </button> 
-                                      <span class="mkdf-query-result">
-                                      </span>
-                                    </span>
+
                                     <span class="mkdf-reset-filter-section">
-                                      <button type="submit"  class="mkdf-btn mkdf-btn-medium mkdf-btn-simple mkdf-btn-icon mkdf-property-filter-reset-button"  >    
+                                      <button type="button" onclick="window.location.href='<?php echo base_url('listing/reset_advance_form');?>'" class="mkdf-btn mkdf-btn-medium mkdf-btn-simple mkdf-btn-icon mkdf-property-filter-reset-button"  >    
                                         <span class="mkdf-btn-text">Reset
                                         </span>    
                                         <span aria-hidden="true" class="mkdf-icon-font-elegant arrow_carrot-right " >
@@ -332,6 +320,9 @@
                                     </span>        
                                   </div>
                                 </div>
+
+								</form>
+
                                 <div class="mkdf-pl-filter-loading">
                                   <div class="mkdf-pl-loading-bounce1">
                                   </div>
@@ -382,10 +373,6 @@
                                             </a>
                                           </h5>        
                                           <div class="mkdf-item-address">
-                                            <span class="mkdf-item-city">San Diego
-                                            </span>
-                                            <span class="mkdf-item-dash">&ndash;
-                                            </span>
                                             <span class="mkdf-item-city"><?php echo ucfirst($property->location);?>
                                             </span>
                                             <span class="mkdf-item-comma">&#44;
@@ -395,12 +382,16 @@
                                             <span class="mkdf-item-city">
                                             </span>
                                           </div>
+                                        
+										  <?php
+											if($property->property_type == "sale"){
+										  ?>
                                           <div class="mkdf-item-info">
                                             <span class="mkdf-item-icon">
                                               <span aria-hidden="true" class="icon_house_alt">
                                               </span>
                                             </span>
-                                            <span class="mkdf-item-size">890sq ft
+                                            <span class="mkdf-item-size"><?php echo $property->size;?> Sq. Ft.
                                             </span>
                                             <span class="mkdf-item-dash">&ndash;
                                             </span>
@@ -411,6 +402,9 @@
                                             <span class="mkdf-item-accomodation">Furnitured
                                             </span>
                                           </div>
+										  <?php
+											}
+										  ?>
                                         </div>
                                       </div>
                                       <a itemprop="url" class="mkdf-pli-link mkdf-block-drag-link" href="<?php echo base_url();?>details/<?php echo $property->holiday_rental_id;?>" target="_self">
