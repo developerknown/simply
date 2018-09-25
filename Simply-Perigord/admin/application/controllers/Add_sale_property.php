@@ -29,6 +29,7 @@ class Add_sale_property extends CI_Controller {
 		$country = "France";
 		$date = time();
 		$property_type = 'sale';
+		$rental_tags = implode(",",$this->input->post('property_tags'));
 
 		$records = array(
 				"name" => $prop_name,
@@ -44,7 +45,8 @@ class Add_sale_property extends CI_Controller {
 				"rural_setting" => $rural_setting,
 				"booked_date" => $date,
 				"status" => '1',
-				"location_country" => $country
+				"location_country" => $country,
+				"tags" => $rental_tags
 		);	
 
 
