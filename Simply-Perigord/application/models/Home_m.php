@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home_m extends CI_Model {
 
 	public function fetch_property($type){
-		  $condition = array('user_id'=> $user_id , 'user_type' => 'Supplier');
+		  $condition = array('property_type'=> $type);
 		  $this->db->select('*');
 		  $this->db->from('holiday_rental');
 		  $this->db->where($condition);

@@ -18,14 +18,29 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct(){
+        parent::__construct();
+        if(!$this->session->userdata['logged_in']['user_id']){
+            redirect('login');
+        }else{
+			$user_id = $this->session->userdata['logged_in']['user_id'];
+		}
+		 if($this->session->userdata['logged_in']['user_type'] != "admin"){
+            redirect('error_page');
+        }
+     }
 	public function index()
 	{
-		$data['property_sale'] = $this->get_housing("sale");.
-		$data['property_rent'] = $this->get_housing("rent");
+		$this->load->model('home_m');
+		/*$data['property_sale'] = $this->get_housing("sale");
+		$data['property_rent'] = $this->get_housing("rental");*/
+		
+		$data['property_sale'] = $this->home_m->fetch_property("sale");
+		$data['property_rent'] = $this->home_m->fetch_property("rental");
+
+
 		$this->load->view('home',$data);
 	}
 
-	public function get_housing($type){
-		$this->load->model('home_m');
-	}
+	
 }
