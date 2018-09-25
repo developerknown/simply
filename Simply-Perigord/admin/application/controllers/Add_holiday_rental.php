@@ -38,6 +38,9 @@ class Add_holiday_rental extends CI_Controller {
 		$cosy_cottage = $this->input->post('cosy_cottage');
 		/*$prop_images = $this->input->post('prop_images');*/
 		$date = time();
+		$country = "France";
+		$rental_tags = implode(",",$this->input->post('property_tags'));
+		
 
 		$records = array(
 				"property_type" => 'rental',
@@ -66,7 +69,9 @@ class Add_holiday_rental extends CI_Controller {
 				"romantic_for_two" => $romantic_for_two,
 				"cosy_cottage" => $cosy_cottage,
 				"booked_date" => $date,
-				"status" => '1'
+				"status" => '1',
+				"location_country" => $country,
+				"tags" => $rental_tags,
 		);	
 
 		$insert_new_holiday_rental = $this->add_holiday_rental_m->add_new_rental_table($records);

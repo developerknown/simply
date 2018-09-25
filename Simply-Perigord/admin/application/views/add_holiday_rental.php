@@ -20,6 +20,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/daterangepicker-bs3.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetimepicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/multiple-image-upload.css');?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2.css');?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2-bootstrap.css');?>"/>
+	
     <!--iCheck-->
     <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet">
 </head>
@@ -78,8 +81,37 @@
 								<div class="form-group">
                                     <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Property Location</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputproplocation" placeholder="Property Location" name="prop_location">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
+										<select class="form-control m-b-10" name="prop_location">
+											<option value="">Please Select</option>
+											<?php
+											   $get_location = $this->add_holiday_rental_m->get_location();
+											   //print_r($get_location);
+											   foreach($get_location As $location)
+											   {
+											?>
+                                            <option value="<?php echo $location->city_name;?>"><?php echo $location->city_name;?></option>
+                                          <?php
+											   }
+											?>
+										</select>
+                                    </div>
+                                </div>
+                              </div>
+							   <div class="col-lg-6">
+								<div class="form-group">
+                                    <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Add Property Tags</label>
+                                    <div class="col-lg-8">
+                                        <!--<p class="help-block">Example block-level help text here.</p>-->	 
+										<select id="multiple" class="form-control select2-multiple select2-offscreen" multiple="" tabindex="-1" name="property_tags[]">
+										<option value=""  disabled>Select Tags</option>
+											<option value="Country Properties">Country Properties</option>
+											<option value="Family Properties">Family Properties</option>
+											<option value="Budget Friendly">Budget Friendly</option>
+											<option value="Perfectly Private">Perfectly Private</option>
+											<option value="Village Life">Village Life</option>
+										
+									</select>
                                     </div>
                                 </div>
                               </div>
@@ -438,6 +470,10 @@ function preview_images()
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap-colorpicker.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap-timepicker.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/multiple-image-upload.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/select2.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/select2-init.js');?>"></script>
+
+
 
 <!--picker initialization-->
 <script src="<?php echo base_url('js/picker-init.js');?>"></script>

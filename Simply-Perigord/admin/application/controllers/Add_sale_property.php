@@ -15,6 +15,7 @@ class Add_sale_property extends CI_Controller {
 		$this->load->model('add_sale_property_m');
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
+		
 		$prop_size = $this->input->post('prop_size');
 		/*$season = $this->input->post('season');
 		$price = $this->input->post('price');*/
@@ -25,8 +26,10 @@ class Add_sale_property extends CI_Controller {
 		$private_garden = $this->input->post('private_garden');
 		$village_house = $this->input->post('village_house');
 		$rural_setting = $this->input->post('rural_setting');
+		$country = "France";
 		$date = time();
 		$property_type = 'sale';
+		$rental_tags = implode(",",$this->input->post('property_tags'));
 
 		$records = array(
 				"name" => $prop_name,
@@ -41,7 +44,9 @@ class Add_sale_property extends CI_Controller {
 				"village_house" => $village_house,
 				"rural_setting" => $rural_setting,
 				"booked_date" => $date,
-				"status" => '1'
+				"status" => '1',
+				"location_country" => $country,
+				"tags" => $rental_tags
 		);	
 
 
