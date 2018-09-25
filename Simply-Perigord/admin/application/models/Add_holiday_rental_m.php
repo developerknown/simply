@@ -15,6 +15,13 @@ class Add_holiday_rental_m extends CI_Model {
 		return true;
 	}
 
+	public function fetch_seasons(){
+		$this->db->select('*');
+		$this->db->from('season');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }
 
 /* End of file Add_holiday_rental_m.php */

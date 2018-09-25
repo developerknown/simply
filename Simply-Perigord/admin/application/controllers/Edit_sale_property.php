@@ -7,7 +7,9 @@ class Edit_sale_property extends CI_Controller {
 	{
 		$this->load->model('edit_sale_property_m');
 		$sale_prop_id = $this->uri->segment(2);
+		$data['get_seasons'] = $this->edit_sale_property_m->fetch_seasons();
 		$data['get_all_sale_property'] = $this->edit_sale_property_m->fetch_sale_property($sale_prop_id);
+		
 		$this->load->view('edit_sale_property',$data);
 	}
 
@@ -18,6 +20,8 @@ class Edit_sale_property extends CI_Controller {
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
 		$prop_size = $this->input->post('prop_size');
+		/*$season = $this->input->post('season');
+		$price = $this->input->post('price');*/
 		$bedroom = $this->input->post('bedroom');
 		$bathroom = $this->input->post('bathroom');
 		$private_pool = $this->input->post('private_pool');
@@ -28,6 +32,7 @@ class Edit_sale_property extends CI_Controller {
 		$date = time();
 
 		$records = array(
+				"property_type" => 'sale',
 				"name" => $prop_name,
 				"location" => $prop_location,
 				"size" => $prop_size,
@@ -45,6 +50,38 @@ class Edit_sale_property extends CI_Controller {
 
 		$update_new_sale_property = $this->edit_sale_property_m->update_property_sale_table($records,$sale_prop_id);
 		if($update_new_sale_property){
+
+		 /********************************************************/
+			$last_sale_property_id = $sale_prop_id;
+			$this->load->library('upload');
+		    $dataInfo = array();
+		    $files = $_FILES;
+		    $cpt = count($_FILES['userfile']['name']);
+		    
+		    for($i=0; $i<$cpt; $i++){           
+		        
+		        $_FILES['userfile']['name']= $files['userfile']['name'][$i];
+		        $_FILES['userfile']['type']= $files['userfile']['type'][$i];
+		        $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
+		        $_FILES['userfile']['error']= $files['userfile']['error'][$i];
+		        $_FILES['userfile']['size']= $files['userfile']['size'][$i];    
+
+		        $this->upload->initialize($this->set_upload_options());
+		        $this->upload->do_upload();
+		        $dataInfo[] = $this->upload->data();
+		    }
+		   
+		    for($i=0; $i<$cpt; $i++){
+		    	$data = array(
+			        'property_sale_id' => $last_sale_property_id,
+			        'images' => $dataInfo[$i]['file_name'],
+			        'date' => time(),
+			        'status' => '1'
+			    );
+			    $insert_new_sale_property_images = $this->edit_sale_property_m->add_new_sale_image_table($data);	
+		    }
+
+		    /***********************************************************************/
 			$this->session->set_flashdata("update_sale_prop_successfull", "The defined property has been updated successfully...!");
 				redirect('edit_sale_property/'.$sale_prop_id);
 		}else{
@@ -53,17 +90,14 @@ class Edit_sale_property extends CI_Controller {
 		}	
 	}
 
-	/*private function set_upload_options()
+	private function set_upload_options()
 	{   
 	    //upload an image options
 	    $config = array();
-	    $config['upload_path'] = 'uploads/property_sale';
-	    $config['allowed_types'] = 'gif|jpg|png';
-	    $config['max_size']      = '0';
-	    $config['overwrite']     = FALSE;
-
+	    $config['upload_path'] = 'uploads/';
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
 	    return $config;
-	}*/
+	}
 
 }
 

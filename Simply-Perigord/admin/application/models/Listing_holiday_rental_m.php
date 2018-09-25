@@ -7,6 +7,7 @@ class Listing_holiday_rental_m extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('holiday_rental');
+		$this->db->where('property_type', 'rental');
 		$query = $this->db->get();
 		return $query->result();
 	}

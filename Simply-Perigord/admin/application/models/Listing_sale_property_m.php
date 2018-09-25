@@ -6,13 +6,14 @@ class Listing_sale_property_m extends CI_Model {
 	public function fetch_sale_property()
 	{
 		$this->db->select('*');
-		$this->db->from('property_sale');
+		$this->db->from('holiday_rental');
+		$this->db->where('property_type', 'sale');
 		$query = $this->db->get();
 		return $query->result();
 	}
 	public function delete_prop_sale_id($del_sale_id){
-		$this->db->where('property_sale_id', $del_sale_id);
-		$this->db->delete('property_sale');
+		$this->db->where('holiday_rental_id', $del_sale_id);
+		$this->db->delete('holiday_rental');
 		return true;
 	}
 

@@ -1,27 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Edit_sale_property_m extends CI_Model {
+class Edit_holiday_rental_m extends CI_Model {
 
-	public function fetch_sale_property($sale_prop_id)
-	{
+	public function fetch_rental_property($rental_prop_id){
 		$this->db->select('*');
 		$this->db->from('holiday_rental');
-		$this->db->where('holiday_rental_id',$sale_prop_id);
-		$this->db->where('property_type','sale');
+		$this->db->where('holiday_rental_id',$rental_prop_id);
 		$query = $this->db->get();
 		return $query->row();
 	}
 
-	public function update_property_sale_table($records,$sale_prop_id)
+	public function update_property_rental_table($records,$rental_prop_id)
 	{
-		$condition  = array('holiday_rental_id' => $sale_prop_id);
+		$condition  = array('holiday_rental_id' => $rental_prop_id);
 		$this->db->where($condition);
 		$query = $this->db->update('holiday_rental', $records);
 		return $query;
 	}
 
-	public function fetch_property_sale_images($prop_id)
+	public function fetch_property_rent_images($prop_id)
 	{
 		$this->db->select('*');
 		$this->db->from('holiday_rental_images');
@@ -30,7 +28,7 @@ class Edit_sale_property_m extends CI_Model {
 		return $query->result();
 	}
 
-	public function add_new_sale_image_table($data)
+	public function add_new_rental_image_table($data)
 	{
 		$this->db->insert('holiday_rental_images', $data);
 		return true;
@@ -45,5 +43,5 @@ class Edit_sale_property_m extends CI_Model {
 
 }
 
-/* End of file edit_sale_property_m.php */
-/* Location: ./application/models/edit_sale_property_m.php */
+/* End of file Edit_holiday_rental_m.php */
+/* Location: ./application/models/Edit_holiday_rental_m.php */
