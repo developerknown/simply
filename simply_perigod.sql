@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 25, 2018 at 12:20 PM
--- Server version: 5.7.19
--- PHP Version: 5.6.31
+-- Generation Time: Sep 25, 2018 at 02:12 PM
+-- Server version: 5.7.21
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `holiday_rental` (
   `location_country` varchar(255) NOT NULL,
   `tags` longtext NOT NULL,
   PRIMARY KEY (`holiday_rental_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `holiday_rental`
@@ -105,7 +105,9 @@ INSERT INTO `holiday_rental` (`holiday_rental_id`, `property_type`, `name`, `loc
 (9, 'sale', '3Bedrooms 2Baths Independent House/Villa for Sale', 'Sodepur, Kolkata North, Kolkata', '1000 to 1100 Sq.Ft.', '', '1600', '', '', '', '', '4', '3', '', '', '', '', '', 'no', 'yes', 'no', '', '', 'no', 'yes', '', '', '1537452777', '1', '', ''),
 (10, 'sale', '5Bedrooms 4Baths Independent House/Villa for Sale', 'Barrackpore, Kolkata North, Kolkata', '2500 Sq.Ft.', '', '2800', '', '', '', '', '3', '1', '', '', '', '', '', 'no', 'no', 'no', '', '', 'yes', 'yes', '', '', '1537453339', '1', '', ''),
 (11, 'sale', '3 BHK 1475 Sq-ft Flat For Sale in E M Bypass, Kolkata, West Bengal', 'ranchi', '1200 sq ft.', '', '3200', '', '', '', '', '1', '1', '', '', '', '', '', 'yes', 'yes', 'yes', '', '', 'yes', 'yes', '', '', '1537863111', '1', '', ''),
-(12, 'rental', '3 BHK 1475 Sq-ft Flat For Sale', 'Bangalore', '', '1', '1500', '4', '10/02/2018', '10/23/2018', '20', '2', '3', 'yes', 'yes', 'no', 'yes', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', '1537863209', '1', '', '');
+(12, 'rental', '3 BHK 1475 Sq-ft Flat For Sale', 'Bangalore', '', '1', '1500', '4', '10/02/2018', '10/23/2018', '20', '2', '3', 'yes', 'yes', 'no', 'yes', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', '1537863209', '1', '', ''),
+(13, 'sale', 'gfgfg', 'Monaco', 'gfgfgfg', '', '', '', '', '', '', '1', '1', '', '', '', '', '', 'no', 'yes', 'no', '', '', 'yes', 'yes', '', '', '1537882262', '1', 'France', ''),
+(14, 'rental', 'yoo', 'Monaco', '', '1', '', '', '09/20/2018', '09/25/2018', '', '2', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1537883909', '1', 'France', 'Budget Friendly,Village Life');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `holiday_rental_images` (
   `date` varchar(255) NOT NULL,
   `status` enum('0','1') NOT NULL,
   PRIMARY KEY (`holiday_rental_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `holiday_rental_images`
@@ -162,7 +164,31 @@ INSERT INTO `holiday_rental_images` (`holiday_rental_image_id`, `holiday_rental_
 (35, '11', 'unitech-fresco-elevation-10313381.jpeg', '1537863111', '1'),
 (36, '12', '207729851.jpeg', '1537863209', '1'),
 (37, '12', '207729861.jpeg', '1537863209', '1'),
-(38, '12', '35767117_18_IMG-20180213-WA00171.jpg', '1537863209', '1');
+(38, '12', '35767117_18_IMG-20180213-WA00171.jpg', '1537863209', '1'),
+(39, '13', 'about1.png', '1537882263', '1'),
+(40, '14', '', '1537883909', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location`
+--
+
+DROP TABLE IF EXISTS `location`;
+CREATE TABLE IF NOT EXISTS `location` (
+  `location_id` int(255) NOT NULL AUTO_INCREMENT,
+  `country` varchar(255) NOT NULL,
+  `city_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`location_id`, `country`, `city_name`) VALUES
+(2, 'France', 'Monaco'),
+(3, 'France', 'Paris');
 
 -- --------------------------------------------------------
 
