@@ -5,7 +5,7 @@
                 <a href="index.html">
                     <img src="images/logo-icon.png" alt="">
                     <!--<i class="fa fa-maxcdn"></i>-->
-                    <span class="brand-name">SlickLab</span>
+                    <span class="brand-name">Simply</span>
                 </a>
             </div>
             <!--responsive view logo end-->
@@ -21,6 +21,13 @@
                         <h3 class="navigation-title">Navigation</h3>
                     </li>
                     <li><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                     <li class="menu-list">
+                        <a href=""><i class="fa fa-laptop"></i>  <span>Season</span></a>
+                        <ul class="child-list">
+                            <li><a href="<?php echo base_url('listing_season');?>"> View Season</a></li>
+                            <li><a href="<?php echo base_url('add_season');?>"> Add Season</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-list">
                         <a href=""><i class="fa fa-laptop"></i>  <span>SALE Property</span></a>
                         <ul class="child-list">
@@ -34,6 +41,13 @@
                             <li><a href="<?php echo base_url('add_holiday_rental');?>"> Add Rental Property</a></li>
                         </ul>
                     </li>
+                    <li class="menu-list"><a href=""><i class="fa fa-list"></i> <span>Bookings</span></a>
+                        <ul class="child-list">
+                            <li><a href="<?php echo base_url('holiday_rental_booking');?>">Holiday Rental</a></li>
+                            <li><a href="<?php echo base_url('property_sale_booking');?>"> Property Sale</a></li>
+                        </ul>
+                    </li>                    
+                    <li><a href="<?php echo base_url('user_info');?>"><i class="fa fa-user"></i> <span>User</span></a></li>
                 </ul>
                 <!--sidebar nav end-->
             </div>

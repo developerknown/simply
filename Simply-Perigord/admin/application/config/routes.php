@@ -55,4 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['listing_sale_property/(:num)'] = "listing_sale_property";
 $route['listing_holiday_rental/(:num)'] = "listing_holiday_rental";
 $route['edit_sale_property/(:num)'] = "edit_sale_property";
+$route['edit_holiday_rental/(:num)'] = "edit_holiday_rental";
+$route['listing_season/(:num)'] = "listing_season";
+$route['edit_season/(:num)'] = "edit_season";
+
+
 

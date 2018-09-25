@@ -5,7 +5,9 @@ class Add_sale_property extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('add_sale_property');
+		$this->load->model('add_sale_property_m');
+		$data['get_seasons'] = $this->add_sale_property_m->fetch_seasons();
+		$this->load->view('add_sale_property',$data);
 	}
 
 	public function add_new_sale_property(){
@@ -14,6 +16,8 @@ class Add_sale_property extends CI_Controller {
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
 		$prop_size = $this->input->post('prop_size');
+		/*$season = $this->input->post('season');
+		$price = $this->input->post('price');*/
 		$bedroom = $this->input->post('bedroom');
 		$bathroom = $this->input->post('bathroom');
 		$private_pool = $this->input->post('private_pool');
@@ -22,11 +26,13 @@ class Add_sale_property extends CI_Controller {
 		$village_house = $this->input->post('village_house');
 		$rural_setting = $this->input->post('rural_setting');
 		$date = time();
+		$property_type = 'sale';
 
 		$records = array(
 				"name" => $prop_name,
 				"location" => $prop_location,
 				"size" => $prop_size,
+				"property_type" => $property_type,
 				"bedrooms" => $bedroom,
 				"bathrooms" => $bathroom,
 				"private_pool" => $private_pool,
@@ -34,7 +40,7 @@ class Add_sale_property extends CI_Controller {
 				"private_garden" => $private_garden,
 				"village_house" => $village_house,
 				"rural_setting" => $rural_setting,
-				"date" => $date,
+				"booked_date" => $date,
 				"status" => '1'
 		);	
 
@@ -62,8 +68,8 @@ class Add_sale_property extends CI_Controller {
 		   
 		    for($i=0; $i<$cpt; $i++){
 		    	$data = array(
-			        'property_sale_id' => $last_sale_property_id,
-			        'images' => $dataInfo[$i]['file_name'],
+			        'holiday_rental_id' => $last_sale_property_id,
+			        'image' => $dataInfo[$i]['file_name'],
 			        'date' => time(),
 			        'status' => '1'
 			    );
@@ -88,10 +94,8 @@ class Add_sale_property extends CI_Controller {
 	{   
 	    //upload an image options
 	    $config = array();
-	    $config['upload_path'] = 'uploads/property_sale';
-	    $config['allowed_types'] = 'gif|jpg|png';
-	    $config['max_size']      = '0';
-	    $config['overwrite']     = FALSE;
+	    $config['upload_path'] = 'uploads/';
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
 
 	    return $config;
 	}
