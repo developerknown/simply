@@ -247,7 +247,7 @@
                                                         <div class="mkdf-item-info-top">
                                                           <span class="mkdf-property-statuses">
                                                             <span class="mkdf-property-status">
-                                                              Just Sold        
+                                                              <?php echo ucfirst($property->property_type);?>        
                                                             </span>
                                                           </span>
                                                           <div class="mkdf-item-featured">
@@ -259,7 +259,7 @@
                                                           <div class="mkdf-item-info-bottom-left">
                                                             <h5 itemprop="name" class="mkdf-pli-title entry-title">
                                                               <a itemprop="url" href="#" target="_self">
-                                                                <?php echo $property->name;?>
+                                                                <?php echo ucfirst($property->name);?>
                                                               </a>
                                                             </h5>                    
                                                             <div class="mkdf-item-address">
@@ -275,7 +275,7 @@
                                                             <span class="mkdf-property-price">
                                                               <span class="mkdf-property-price-label">&euro;
                                                               </span>
-                                                              <span class="mkdf-property-price-value">2.900
+                                                              <span class="mkdf-property-price-value"><?php echo $property->price;?>
                                                               </span>
                                                             </span>
                                                           </div>
