@@ -78,7 +78,20 @@
 								<div class="form-group">
                                     <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Property Location</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputproplocation" placeholder="Property Location" name="prop_location">
+									
+										<select class="form-control m-b-10" name="prop_location">
+											<option value="">Please Select</option>
+											<?php
+											   $get_location = $this->add_sale_property_m->get_location();
+											   //print_r($get_location);
+											   foreach($get_location As $location)
+											   {
+											?>
+                                            <option value="<?php echo $location->city_name;?>"><?php echo $location->city_name;?></option>
+                                          <?php
+											   }
+											?>
+										</select>
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>

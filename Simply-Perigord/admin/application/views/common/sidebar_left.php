@@ -21,6 +21,13 @@
                         <h3 class="navigation-title">Navigation</h3>
                     </li>
                     <li><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+					  <li class="menu-list">
+                        <a href=""><i class="fa fa-laptop"></i>  <span>Location</span></a>
+                        <ul class="child-list">
+                            <li><a href="<?php echo base_url('listing_location');?>"> View Location</a></li>
+                            <li><a href="<?php echo base_url('add_location');?>"> Add Location</a></li>
+                        </ul>
+                    </li>
                      <li class="menu-list">
                         <a href=""><i class="fa fa-laptop"></i>  <span>Season</span></a>
                         <ul class="child-list">

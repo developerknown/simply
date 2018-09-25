@@ -22,6 +22,13 @@ class Add_holiday_rental_m extends CI_Model {
 		return $query->result();
 	}
 
+	public function get_location(){
+		$this->db->select('*');
+		$this->db->from('location');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }
 
 /* End of file Add_holiday_rental_m.php */

@@ -21,6 +21,15 @@ class Add_sale_property_m extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	public function get_location(){
+		$this->db->select('*');
+		$this->db->from('location');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
 }
 
 /* End of file Add_sale_property_m.php */
