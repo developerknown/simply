@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 		
 		$data['property_sale'] = $this->home_m->fetch_property("sale");
 		$data['property_rent'] = $this->home_m->fetch_property("rental");
+		$data['all_property'] = $this->home_m->fetch_property();
 
 
 		$this->load->view('home',$data);
