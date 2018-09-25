@@ -354,20 +354,20 @@
                                           <div class="mkdf-item-top-section-content-inner">
                                             <div class="mkdf-item-info-top">
                                               <span class="mkdf-property-statuses">
-                                                <span class="mkdf-property-status">For <?php echo $property->property_type;?>
+                                                <span class="mkdf-property-status">For Rent
                                                 </span>
                                               </span>
                                             </div>
                                             <div class="mkdf-item-info-bottom">
                                               <div class="mkdf-item-info-bottom-left">
-                                                <span class="mkdf-property-id">ID <?php echo $property->holiday_rental_id;?>
+                                                <span class="mkdf-property-id">ID 1235
                                                 </span>
                                               </div>
                                               <div class="mkdf-item-info-bottom-right">
                                                 <span class="mkdf-property-price">
-                                                  <span class="mkdf-property-price-label" style="font-size:14px;"> &euro;
+                                                  <span class="mkdf-property-price-label">$
                                                   </span>
-                                                  <span class="mkdf-property-price-value" style="font-size:14px;"> <?php echo $property->price;?>
+                                                  <span class="mkdf-property-price-value">3.100
                                                   </span>
                                                 </span>
                                               </div>
@@ -378,15 +378,19 @@
                                       <div class="mkdf-item-bottom-section">
                                         <div class="mkdf-item-bottom-section-content">
                                           <h5 itemprop="name" class="mkdf-pli-title entry-title">
-                                            <a itemprop="url" href="#" target="_self"><?php echo substr(ucfirst($property->name),0,100);?>..
+                                            <a itemprop="url" href="#" target="_self"><?php echo ucfirst($property->name);?>
                                             </a>
                                           </h5>        
                                           <div class="mkdf-item-address">
-                                            <span class="mkdf-item-city"><?php echo ucfirst($property->location);?>
+                                            <span class="mkdf-item-city">San Diego
+                                            </span>
+                                            <span class="mkdf-item-dash">&ndash;
+                                            </span>
+                                            <span class="mkdf-item-city">California
                                             </span>
                                             <span class="mkdf-item-comma">&#44;
                                             </span>
-                                            <span class="mkdf-item-city">France
+                                            <span class="mkdf-item-city">US
                                             </span>
                                             <span class="mkdf-item-city">
                                             </span>

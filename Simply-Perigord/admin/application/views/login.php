@@ -29,7 +29,7 @@
 
       <h2 class="form-heading">login</h2>
       <div class="container log-row">
-          <form class="form-signin" action="index.html">
+          <form class="form-signin" action="<?php echo base_url();?>listing_season">
               <div class="login-wrap">
                   <input type="text" class="form-control" placeholder="User ID" autofocus>
                   <input type="password" class="form-control" placeholder="Password">

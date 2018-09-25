@@ -382,6 +382,10 @@
                                             </a>
                                           </h5>        
                                           <div class="mkdf-item-address">
+                                            <span class="mkdf-item-city">San Diego
+                                            </span>
+                                            <span class="mkdf-item-dash">&ndash;
+                                            </span>
                                             <span class="mkdf-item-city"><?php echo ucfirst($property->location);?>
                                             </span>
                                             <span class="mkdf-item-comma">&#44;

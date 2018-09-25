@@ -12,7 +12,6 @@ class Home_m extends CI_Model {
 		  
 		  $this->db->select('*');
 		  $this->db->from('holiday_rental');
-		  $this->db->join('holiday_rental_images','holiday_rental_images.holiday_rental_id = holiday_rental.holiday_rental_id');
 		  $this->db->where($condition);
 		  $query = $this->db->get();
 		  return $query->row();
