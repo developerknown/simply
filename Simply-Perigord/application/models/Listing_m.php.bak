@@ -13,6 +13,15 @@ class Listing_m extends CI_Model {
 		  return $query->result();
 	}
 
+	public function fetch_locations(){
+		$condition = array();
+		$this->db->select("*");
+		$this->db->from("");
+		$this->db->where($condition);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }
 
 /* End of file Edit_supplier_m.php */

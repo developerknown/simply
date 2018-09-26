@@ -35,11 +35,14 @@ class Listing extends CI_Controller {
 		$password = $this->input->post('password');
 		$records=array('email'=>$email,'password'=>$password);
 
-		
+		$this->session->set_userdata('logged_in',$session_data);
+			if(isset($this->session->userdata['logged_in']['user_type']) && $this->session->userdata['logged_in']['user_type'] == "Small and medium business"){
+			}
 
 	}
 
 	public function reset_advance_form(){
 		/* reset all session values */
 	}
+
 }
