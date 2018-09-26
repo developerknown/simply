@@ -141,168 +141,133 @@
                                       <div class="mkdf-filter-features-holder">
                                         <div class="mkdf-filter-features-wrapper clearfix">
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="33" id="mkdf-feature-33" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="33" id="mkdf-feature-33" name="amenities[]" value="washer" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-33">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">AC &amp; Heating 
+                                              <span class="mkdf-label-text">Washer
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="37" id="mkdf-feature-37" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="37" id="mkdf-feature-37" name="amenities[]" value="television" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-37">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Balcony
+                                              <span class="mkdf-label-text">TV
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="109" id="mkdf-feature-109" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="109" id="mkdf-feature-109" name="amenities[]" value="aircon" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-109">
                                               <span class="mkdf-label-view">
                                               </span>
                                               <span class="mkdf-label-text">
-                                                Clubhouse                        
+                                                Aircon                       
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="44" id="mkdf-feature-44" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="44" id="mkdf-feature-44" name="amenities[]" value="wifi" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-44">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Dishwasher 
+                                              <span class="mkdf-label-text">Wifi 
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="34" id="mkdf-feature-34" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="34" id="mkdf-feature-34" name="amenities[]" value="bbq" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-34">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Elevator
+                                              <span class="mkdf-label-text">BBQ
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="28" id="mkdf-feature-28" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="28" id="mkdf-feature-28" name="amenities[]" value="private_pool" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-28">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Fitness Center 
+                                              <span class="mkdf-label-text">Private Pool 
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="45" id="mkdf-feature-45" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="45" id="mkdf-feature-45" name="amenities[]" value="private_parking" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-45">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Granite tops 
+                                              <span class="mkdf-label-text">Private Parking 
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="30" id="mkdf-feature-30" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="30" id="mkdf-feature-30" name="amenities[]" value="private_garden" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-30">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Laundry Facilities
+                                              <span class="mkdf-label-text">Private Garden
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="38" id="mkdf-feature-38" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="38" id="mkdf-feature-38" name="amenities[]" value="pet_allowed" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-38">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Modern Kitchen
+                                              <span class="mkdf-label-text">Pets Allowed
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="40" id="mkdf-feature-40" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="40" id="mkdf-feature-40" name="amenities[]" value="family_friendly" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-40">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Pet Friendly
+                                              <span class="mkdf-label-text">Family Friendly
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="27" id="mkdf-feature-27" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="27" id="mkdf-feature-27" name="amenities[]" value="village_house" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-27">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Pool 
+                                              <span class="mkdf-label-text">Village House 
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="29" id="mkdf-feature-29" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="29" id="mkdf-feature-29" name="amenities[]" value="rural_setting" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-29">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Spa 
+                                              <span class="mkdf-label-text">Rural Setting 
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="32" id="mkdf-feature-32" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="32" id="mkdf-feature-32" name="amenities[]" value="romantic_for_two" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-32">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Storage Units
+                                              <span class="mkdf-label-text">Romantic for Two
                                               </span>
                                             </label>
                                           </div>
                                           <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="110" id="mkdf-feature-110" name="mkdf-features[]" value="" />
+                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="110" id="mkdf-feature-110" name="amenities[]" value="cosy_cottage" />
                                             <label class="mkdf-checkbox-label" for="mkdf-feature-110">
                                               <span class="mkdf-label-view">
                                               </span>
-                                              <span class="mkdf-label-text">Tennis Court
+                                              <span class="mkdf-label-text">Cosy Cottage
                                               </span>
                                             </label>
                                           </div>
-                                          <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="31" id="mkdf-feature-31" name="mkdf-features[]" value="" />
-                                            <label class="mkdf-checkbox-label" for="mkdf-feature-31">
-                                              <span class="mkdf-label-view">
-                                              </span>
-                                              <span class="mkdf-label-text">Valet Parking
-                                              </span>
-                                            </label>
-                                          </div>
-                                          <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="35" id="mkdf-feature-35" name="mkdf-features[]" value="" />
-                                            <label class="mkdf-checkbox-label" for="mkdf-feature-35">
-                                              <span class="mkdf-label-view">
-                                              </span>
-                                              <span class="mkdf-label-text">Walk-In Closets
-                                              </span>
-                                            </label>
-                                          </div>
-                                          <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="36" id="mkdf-feature-36" name="mkdf-features[]" value="" />
-                                            <label class="mkdf-checkbox-label" for="mkdf-feature-36">
-                                              <span class="mkdf-label-view">
-                                              </span>
-                                              <span class="mkdf-label-text">Washer/Dryer 
-                                              </span>
-                                            </label>
-                                          </div>
-                                          <div class="mkdf-feature-item">
-                                            <input type="checkbox"  class="mkdf-feature-cb" data-id="43" id="mkdf-feature-43" name="mkdf-features[]" value="" />
-                                            <label class="mkdf-checkbox-label" for="mkdf-feature-43">
-                                              <span class="mkdf-label-view">
-                                              </span>
-                                              <span class="mkdf-label-text">Wi-Fi
-                                              </span>
-                                            </label>
-                                          </div>
+
                                         </div>
                                       </div>
                                     </div>
