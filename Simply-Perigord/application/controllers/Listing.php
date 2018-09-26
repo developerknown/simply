@@ -25,6 +25,7 @@ class Listing extends CI_Controller {
 	{
 		$this->load->model('listing_m');
 		$data['all_property'] = $this->listing_m->fetch_property();
+		$data['all_locations'] = $this->listing_m->fetch_locations();
 		$this->load->view('listing',$data);
 	}
 
@@ -44,4 +45,5 @@ class Listing extends CI_Controller {
 	public function reset_advance_form(){
 		/* reset all session values */
 	}
+
 }
