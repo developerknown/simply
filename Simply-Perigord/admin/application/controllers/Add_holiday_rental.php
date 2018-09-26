@@ -15,8 +15,8 @@ class Add_holiday_rental extends CI_Controller {
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
 		$house_sleeping = $this->input->post('house_sleeping');
-		$date_from = $this->input->post('date_from');
-		$date_to = $this->input->post('date_to');
+		$date_from = "";
+		$date_to = "";
 		$season = $this->input->post('season');
 		$price = $this->input->post('price');
 		$guest_allowed = $this->input->post('guest_allowed');
