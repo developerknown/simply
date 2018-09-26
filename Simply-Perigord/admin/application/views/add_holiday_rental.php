@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                               </div>
-                              <div class="col-lg-6">
+                              <!--<div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Date</label>
                                     <div class="col-lg-8">
@@ -133,10 +133,10 @@
 											<span class="input-group-addon">To</span>
 											<input type="text" class="form-control dpd2" name="date_to">
 										</div>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                                        <!--<p class="help-block">Example block-level help text here.</p>
                                     </div>
                                 </div>
-                              </div>
+                              </div>-->
                               <div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputpropguestallowed" class="col-lg-3 col-sm-3 control-label">No. of guests</label>

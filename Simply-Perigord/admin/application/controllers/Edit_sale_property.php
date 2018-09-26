@@ -30,6 +30,7 @@ class Edit_sale_property extends CI_Controller {
 		$village_house = $this->input->post('village_house');
 		$rural_setting = $this->input->post('rural_setting');
 		$date = time();
+		$tags = implode("," ,$this->input->post('property_tags'));
 
 		$records = array(
 				"property_type" => 'sale',
@@ -43,8 +44,8 @@ class Edit_sale_property extends CI_Controller {
 				"private_garden" => $private_garden,
 				"village_house" => $village_house,
 				"rural_setting" => $rural_setting,
-				"date" => $date,
-				"status" => '1'
+				"status" => '1',
+				"tags" => $tags
 		);	
 
 
@@ -73,8 +74,8 @@ class Edit_sale_property extends CI_Controller {
 		   
 		    for($i=0; $i<$cpt; $i++){
 		    	$data = array(
-			        'property_sale_id' => $last_sale_property_id,
-			        'images' => $dataInfo[$i]['file_name'],
+					'holiday_rental_id' => $last_sale_property_id,
+			        'image' => $dataInfo[$i]['file_name'],
 			        'date' => time(),
 			        'status' => '1'
 			    );
@@ -97,6 +98,24 @@ class Edit_sale_property extends CI_Controller {
 	    $config['upload_path'] = 'uploads/';
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
 	    return $config;
+	}
+
+	public function delete_image()
+	{
+		$this->load->model('edit_sale_property_m');
+		$image_id = $this->uri->segment(3);
+		$property_id = $this->uri->segment(4);
+		$delete_image = $this->edit_sale_property_m->img_dlt($image_id);
+		if($delete_image)
+		{
+			$this->session->set_flashdata("delt_img_sccful", "The image has been successfully deleted...!");
+			redirect('edit_sale_property/'.$property_id);
+		}
+		else
+		{
+			$this->session->set_flashdata("delt_img_failed", "Failed to delete the image...!");
+			redirect('edit_sale_property/'.$property_id);
+		}
 	}
 
 }

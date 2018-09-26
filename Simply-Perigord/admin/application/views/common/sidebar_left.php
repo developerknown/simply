@@ -53,7 +53,8 @@
                             <li><a href="<?php echo base_url('holiday_rental_booking');?>">Holiday Rental</a></li>
                             <li><a href="<?php echo base_url('property_sale_booking');?>"> Property Sale</a></li>
                         </ul>
-                    </li>                    
+                    </li>
+					<li><a href="<?php echo base_url('about');?>"><i class="fa fa-user"></i> <span>Footer Section</span></a></li>
                     <li><a href="<?php echo base_url('user_info');?>"><i class="fa fa-user"></i> <span>User</span></a></li>
                 </ul>
                 <!--sidebar nav end-->

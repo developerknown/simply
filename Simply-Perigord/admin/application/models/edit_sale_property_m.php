@@ -43,6 +43,20 @@ class Edit_sale_property_m extends CI_Model {
 		return $query->result();
 	}
 
+	public function img_dlt($image_id)
+	{
+		$this->db->where('holiday_rental_image_id', $image_id);
+		$this->db->delete('holiday_rental_images');
+		return true;
+	}
+
+	public function get_location(){
+		$this->db->select('*');
+		$this->db->from('location');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }
 
 /* End of file edit_sale_property_m.php */

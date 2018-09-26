@@ -29,10 +29,12 @@
 
       <h2 class="form-heading">login</h2>
       <div class="container log-row">
-          <form class="form-signin" action="<?php echo base_url();?>listing_season">
+          <form class="form-signin" action="<?php echo base_url('login/check_login');?>" method="post">
+
               <div class="login-wrap">
-                  <input type="text" class="form-control" placeholder="User ID" autofocus>
-                  <input type="password" class="form-control" placeholder="Password">
+                  <input type="text" class="form-control" placeholder="username" name="username" >
+
+                  <input type="password" class="form-control" placeholder="Password" name="password">
                   <button class="btn btn-lg btn-success btn-block" type="submit">LOGIN</button>
                   <div class="login-social-link">
                       <a href="index.html" class="facebook">

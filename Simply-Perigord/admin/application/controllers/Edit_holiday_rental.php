@@ -18,8 +18,8 @@ class Edit_holiday_rental extends CI_Controller {
 		$rental_prop_id = $this->input->post('rental_prop_id');;
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
-		$season = $this->input->post('season');
-		$price = $this->input->post('price');
+		$season = implode("," ,$this->input->post('season'));
+		$price = implode(",",$this->input->post('price'));
 		$house_sleeping = $this->input->post('house_sleeping');
 		$date_from = $this->input->post('date_from');
 		$date_to = $this->input->post('date_to');
@@ -41,6 +41,7 @@ class Edit_holiday_rental extends CI_Controller {
 		$romantic_for_two = $this->input->post('romantic_for_two');
 		$cosy_cottage = $this->input->post('cosy_cottage');
 		$date = time();
+		$tags = implode("," ,$this->input->post('property_tags'));
 
 		$records = array(
 				"property_type" => 'rental',
@@ -69,7 +70,8 @@ class Edit_holiday_rental extends CI_Controller {
 				"romantic_for_two" => $romantic_for_two,
 				"cosy_cottage" => $cosy_cottage,
 				"booked_date" => $date,
-				"status" => '1'
+				"status" => '1',
+				"tags" => $tags
 		);	
 
 
@@ -124,6 +126,24 @@ class Edit_holiday_rental extends CI_Controller {
 	    $config['upload_path'] = 'uploads/';
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
 	    return $config;
+	}
+
+		public function delete_image()
+	{
+		$this->load->model('edit_holiday_rental_m');
+		$image_id = $this->uri->segment(3);
+		$property_id = $this->uri->segment(4);
+		$delete_image = $this->edit_holiday_rental_m->img_dlt($image_id);
+		if($delete_image)
+		{
+			$this->session->set_flashdata("delt_img_sccful", "The image has been successfully deleted...!");
+			redirect('edit_holiday_rental/'.$property_id);
+		}
+		else
+		{
+			$this->session->set_flashdata("delt_img_failed", "Failed to delete the image...!");
+			redirect('edit_holiday_rental/'.$property_id);
+		}
 	}
 
 }

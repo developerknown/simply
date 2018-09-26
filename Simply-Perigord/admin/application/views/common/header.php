@@ -24,30 +24,39 @@
 
                 
                 <div class="notification-wrap">
+
                 <!--right notification start-->
+				<?php
+					if(isset($this->session->userdata['logged_in']))
+					{
+				?>
                 <div class="right-notification">
                     <ul class="notification-menu">
                         <li>
                             <a href="javascript:;" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <img src="img/avatar-mini.jpg" alt="">John Doe
+                                <img src="img/avatar-mini.jpg" alt=""><?php echo $this->session->userdata['logged_in']['name'];?>
+					
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu purple pull-right">
-                                <li><a href="javascript:;"><i class="fa fa-user pull-right"></i>
+                                <!--<li><a href="javascript:;"><i class="fa fa-user pull-right"></i>
                                         <span>Profile</span>
 									</a>
-								</li>
+								</li>-->
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="<?php echo base_url('settings');?>">
                                         <i class="fa fa-cog pull-right"></i>
                                         <span>Settings</span>
                                     </a>
                                 </li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="<?php echo base_url('logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
+				<?php
+					}
+				?>
                 <!--right notification end-->
                 </div>
 

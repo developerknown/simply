@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/daterangepicker-bs3.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/datetimepicker.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/multiple-image-upload.css');?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2.css');?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2-bootstrap.css');?>"/>
     <!--iCheck-->
     <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet">
 </head>
@@ -59,7 +61,16 @@
                                 <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('update_rent_prop_failed');?></strong> </div>
                             <?php
                                 }
+							if($this->session->flashdata('delt_img_sccful')){
                             ?>
+							<div class="alert alert-success"> <strong><?php echo $this->session->flashdata('delt_img_sccful');?></strong> </div>
+							<?php
+								}else if($this->session->flashdata('delt_img_failed')){
+							?>
+								<div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('delt_img_failed');?></strong> </div>
+							<?php
+							}
+							?>
                             <form class="form-horizontal" role="form" action="<?php echo base_url('edit_holiday_rental/edit_defined_rental_property');?>" enctype="multipart/form-data" method="POST">
 							    <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
                                     <b>Property Information</b>
@@ -75,15 +86,49 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Property Location</label>
-                                        <div class="col-lg-8">
-                                            <input type="text" class="form-control" id="inputproplocation" placeholder="Property Location" name="prop_location" value="<?php echo $get_all_rental_property->location?>">
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
+                             
+								<div class="col-lg-6">
+								<div class="form-group">
+                                    <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Property Location</label>
+                                    <div class="col-lg-8">
+                                        <!--<p class="help-block">Example block-level help text here.</p>-->
+										<select class="form-control m-b-10" name="prop_location">
+											<option value="" >Please Select</option>
+											<?php
+											   $get_location = $this->edit_holiday_rental_m->get_location();
+											   //print_r($get_location);
+											   foreach($get_location As $location)
+											   {
+											?>
+                                            <option value="<?php echo $location->city_name;?>" <?php echo (($get_all_rental_property->location == $location->city_name)?'selected':'')?>><?php echo $location->city_name;?></option>
+                                          <?php
+											   }
+											?>
+										</select>
                                     </div>
                                 </div>
+                              </div>
+							  <div class="col-lg-6">
+								<div class="form-group">
+                                    <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Add Property Tags</label>
+                                    <div class="col-lg-8">
+                                        <!--<p class="help-block">Example block-level help text here.</p>-->	 
+										<select id="multiple" class="form-control select2-multiple select2-offscreen" multiple="" tabindex="-1" name="property_tags[]">
+										<option value=""  disabled>Select Tags</option>
+											<?php
+												$tags = explode(",",$get_all_rental_property->tags);
+												
+											?>
+											<option value="Country Properties" <?php echo (in_array("Country Properties",$tags)?'selected':'')?>>Country Properties</option>
+											<option value="Family Properties" <?php echo (in_array("Family Properties",$tags)?'selected':'')?>>Family Properties</option>
+											<option value="Budget Friendly" <?php echo (in_array("Budget Friendly",$tags)?'selected':'')?>>Budget Friendly</option>
+											<option value="Perfectly Private" <?php echo (in_array("Perfectly Private",$tags)?'selected':'')?>>Perfectly Private</option>
+											<option value="Village Life" <?php echo (in_array("Village Life",$tags)?'selected':'')?>>Village Life</option>
+										
+									</select>
+                                    </div>
+                                </div>
+                              </div>
                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">House Sleeping</label>
@@ -371,7 +416,8 @@
                                                     foreach($get_prop_images AS $each_images){
                                                 ?>
                                                 <div class='col-lg-3'>
-                                                    <img class='img-responsive' src="<?php echo base_url();?>uploads/<?php echo $each_images->image?>" style="height:100px;padding:3px;">
+                                                    <img class='img-responsive' src="<?php echo base_url();?>uploads/<?php echo $each_images->image?>" style="height:100px;">
+													<a href="<?php echo base_url('');?>edit_holiday_rental/delete_image/<?php echo $each_images->holiday_rental_image_id;?>/<?php echo $this->uri->segment(2);?>" class="btn btn-danger" style="margin-top:15px;">Delete</a>
                                                 </div>
                                                 <?php
                                                     }
@@ -444,6 +490,8 @@ function preview_images()
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap-colorpicker.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/bootstrap-timepicker.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/multiple-image-upload.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/select2.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/select2-init.js');?>"></script>
 
 <!--picker initialization-->
 <script src="<?php echo base_url('js/picker-init.js');?>"></script>
