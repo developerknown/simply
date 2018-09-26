@@ -31,11 +31,18 @@ class Listing extends CI_Controller {
 
 	public function advance_search(){
 		$this->load->model("listing_m");
+		
+		$property_type = $this->input->post('email');
+		$location = ;
+		$size = ;
+		$price = ;
+		$bedrooms = ;
+		$bathroom = ;
+		$amenities = ;
 
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
 		$records=array('email'=>$email,'password'=>$password);
-
+		
+		
 		$this->session->set_userdata('logged_in',$session_data);
 			if(isset($this->session->userdata['logged_in']['user_type']) && $this->session->userdata['logged_in']['user_type'] == "Small and medium business"){
 			}

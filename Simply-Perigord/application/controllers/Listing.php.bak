@@ -25,16 +25,25 @@ class Listing extends CI_Controller {
 	{
 		$this->load->model('listing_m');
 		$data['all_property'] = $this->listing_m->fetch_property();
+		$data['all_locations'] = $this->listing_m->fetch_locations();
 		$this->load->view('listing',$data);
 	}
 
 	public function advance_search(){
 		$this->load->model("listing_m");
-
+		
+		$property_type = ;
+		$location = ;
+		$size = ;
+		$price = ;
+		$bedrooms = ;
+		$bathroom = ;
+		$amenities = ;
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$records=array('email'=>$email,'password'=>$password);
-
+		
+		
 		$this->session->set_userdata('logged_in',$session_data);
 			if(isset($this->session->userdata['logged_in']['user_type']) && $this->session->userdata['logged_in']['user_type'] == "Small and medium business"){
 			}
