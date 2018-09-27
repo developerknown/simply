@@ -21,11 +21,8 @@ class Add_sale_property extends CI_Controller {
 		$price = $this->input->post('price');*/
 		$bedroom = $this->input->post('bedroom');
 		$bathroom = $this->input->post('bathroom');
-		$private_pool = $this->input->post('private_pool');
-		$private_parking = $this->input->post('private_parking');
-		$private_garden = $this->input->post('private_garden');
-		$village_house = $this->input->post('village_house');
-		$rural_setting = $this->input->post('rural_setting');
+		$amenities = implode(",",$this->input->post('amenities'));
+		
 		$country = "France";
 		$date = time();
 		$property_type = 'sale';
@@ -38,11 +35,7 @@ class Add_sale_property extends CI_Controller {
 				"property_type" => $property_type,
 				"bedrooms" => $bedroom,
 				"bathrooms" => $bathroom,
-				"private_pool" => $private_pool,
-				"private_parking" => $private_parking,
-				"private_garden" => $private_garden,
-				"village_house" => $village_house,
-				"rural_setting" => $rural_setting,
+				"amenities" => $amenities,
 				"booked_date" => $date,
 				"status" => '1',
 				"location_country" => $country,
