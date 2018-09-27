@@ -5,24 +5,45 @@ class About extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('about');
+		$this->load->model('about_m');
+		$data['get_footer_data'] = $this->about_m->fetch_footer_data();
+		$this->load->view('about',$data);
 	}
 
-	public function chng_password(){
-		$this->load->model('settings_m');
-		$new_pass = $this->input->post('new_password');
-		$user_id = $this->session->userdata['logged_in']['user_id'];
+	public function footer_info(){
+		$this->load->model('about_m');
+		$contact_address = $this->input->post('contact_address');
+		$contact_phone = $this->input->post('contact_phone');
+		$contact_email = $this->input->post('contact_email');
+		$fb_link = $this->input->post('fb_link');
+		$insta_link = $this->input->post('insta_link');
+		$twitter_link = $this->input->post('twitter_link');
+		$pinterest_link = $this->input->post('pinterest_link');
+		$about_title = $this->input->post('about_title');
+		$about_content = $this->input->post('about_content');
+		
 		$records = array(
-			"password" => $new_pass
+			"about_title" => $about_title,
+			"about_details" => $about_content,
+			"contact_address" => $contact_address,
+			"contact_phone" => $contact_phone,
+			"contact_email" => $contact_email,
+			"facebook_link" => $fb_link,
+			"insta_link" => $insta_link,
+			"twitter_link" => $twitter_link,
+			"pinterest_link" => $pinterest_link,
+
+			
+
 		);
 
-		$update_password= $this->settings_m->updte_pass($records,$user_id);
-		if($update_password){
-			$this->session->set_flashdata("pass_update_sccs", "The password has been updated successfully...!");
-			redirect('settings');
+		$update_fttr_details= $this->about_m->updte_fttr_info($records);
+		if($update_fttr_details){
+			$this->session->set_flashdata("fttr_update_sccs", "The footer data has been updated successfully...!");
+			redirect('about');
 		}else{
-			$this->session->set_flashdata("pass_update_failed", "Failed to update the password...!");
-			redirect('settings');
+			$this->session->set_flashdata("pass_update_failed", "Failed to update the footer data...!");
+			redirect('about');
 		}
 	}
 
