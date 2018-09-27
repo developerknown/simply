@@ -189,9 +189,11 @@
                                        
                                   </div>
                                 </div>
+								<span  style="color:red;font-size:10px;"><span style="">*</span>Weekly Rate</span>  
                               </div>
-                                       
+                                     
                               </div>
+							  
 							    <?php
                                                     }
                                                 ?>
