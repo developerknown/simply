@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Packages extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -30,19 +30,10 @@ class Home extends CI_Controller {
         }*/
 		$this->load->model('footer_m');
      }
+
 	public function index()
 	{
-		$this->load->model('home_m');
-		/*$data['property_sale'] = $this->get_housing("sale");
-		$data['property_rent'] = $this->get_housing("rental");*/
 		$data['footer'] = $this->footer_m->fetch_footer();
-		$data['property_sale'] = $this->home_m->fetch_property("sale");
-		$data['property_rent'] = $this->home_m->fetch_property("rental");
-		$data['all_property_five'] = $this->home_m->fetch_property_five();
-
-
-		$this->load->view('home',$data);
+		$this->load->view('packages');
 	}
-
-	
 }

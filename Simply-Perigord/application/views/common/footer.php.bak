@@ -20,7 +20,7 @@
           </div>		
           <div id="text-2" class="widget mkdf-footer-column-1 widget_text">
             <div class="textwidget">
-              <p><?php echo ucfirst($footer->about_details);?></p>
+              <p><?php echo $footer->about_details;?></p>
             </div>
           </div>
          

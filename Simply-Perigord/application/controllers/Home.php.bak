@@ -28,7 +28,6 @@ class Home extends CI_Controller {
 		 if($this->session->userdata['logged_in']['user_type'] != "admin"){
             redirect('error_page');
         }*/
-		$this->load->model('footer_m');
      }
 	public function index()
 	{
