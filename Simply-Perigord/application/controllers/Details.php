@@ -33,7 +33,12 @@ class Details extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('details_m');
 		$data['footer'] = $this->footer_m->fetch_footer();
+		$property_id = $this->uri->segment(2);
+		//$data['property'] = $property_id;
+		$data['property'] = $this->details_m->fetch_prodetails($property_id);
+
 		$this->load->view('details',$data);
 	}
 }

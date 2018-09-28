@@ -40,7 +40,7 @@
                     </div>
 					<div class="clearfix"></div>
                   </div>
-                  <div class="mkdf-property-basic-info-holder">
+                  <div class="mkdf-property-basic-info-holder" style="margin-top:-100px;">
                     <div class="mkdf-container">
                       <div class="mkdf-container-inner clearfix">
                         <div class="mkdf-property-basic-info-outer">
