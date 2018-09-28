@@ -50,17 +50,17 @@
                     <section class="panel">
                         <div class="panel-body">
                             <?php
-                                if($this->session->flashdata('add_sale_prop_successfull')){
+                                if($this->session->flashdata('fttr_update_sccs')){
                             ?>
-                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('add_sale_prop_successfull');?></strong> </div>
+                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('fttr_update_sccs');?></strong> </div>
                             <?php
-                                }else if($this->session->flashdata('add_sale_prop_failed')){
+                                }else if($this->session->flashdata('pass_update_failed')){
                             ?>
-                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('add_sale_prop_failed');?></strong> </div>
+                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('pass_update_failed');?></strong> </div>
                             <?php
                                 }
                             ?>
-                            <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url('add_sale_property/add_new_sale_property');?>" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url('about/footer_info');?>" enctype="multipart/form-data">
                         <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
                             <b>Contact Information</b>
                         </header>
@@ -69,7 +69,7 @@
                                 <div class="form-group">
                                     <label for="inputpropname" class="col-lg-3 col-sm-3 control-label">Contact Address</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputpropname" placeholder="Contact Address" name="prop_name">
+                                        <input type="text" class="form-control" id="inputpropname" placeholder="Contact Address" value=" <?php echo (($get_footer_data->contact_address != '')? $get_footer_data->contact_address:'')?>"  name="contact_address" >
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
 								<div class="form-group">
                                     <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">Contact Phone</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Contact Phone" name="prop_size">
+                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Contact Phone" value="<?php echo (($get_footer_data->contact_phone != '')? $get_footer_data->contact_phone:'')?>" name="contact_phone">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
 								<div class="form-group">
                                     <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">Contact Email</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Contact Email" name="prop_size">
+                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Contact Email" name="contact_email" value="<?php echo (($get_footer_data->contact_email != '')? $get_footer_data->contact_email:'')?>">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                               <span class="input-group-btn">
                                                 <button type="button" class="btn btn-white"><i class="fa fa-facebook"></i></button>
                                               </span>
-                                            <input type="text" class="form-control" placeholder="Enter Facebook Link">
+                                            <input type="text" class="form-control" placeholder="Enter Facebook Link" name="fb_link" value="<?php echo (($get_footer_data->facebook_link != '')? $get_footer_data->facebook_link:'')?>">
                                         </div>
 
                                     </div>
@@ -145,7 +145,7 @@
                                               <span class="input-group-btn">
                                                 <button type="button" class="btn btn-white"><i class="fa fa-instagram"></i></button>
                                               </span>
-                                            <input type="text" class="form-control" placeholder="Enter Instagram Link">
+                                            <input type="text" class="form-control" placeholder="Enter Instagram Link" name="insta_link" value="<?php echo (($get_footer_data->insta_link != '')? $get_footer_data->insta_link:'')?>">
                                         </div>
 
                                     </div>
@@ -159,7 +159,7 @@
                                               <span class="input-group-btn">
                                                 <button type="button" class="btn btn-white"><i class="fa fa-twitter"></i></button>
                                               </span>
-                                            <input type="text" class="form-control" placeholder="Enter Twitter Link">
+                                            <input type="text" class="form-control" placeholder="Enter Twitter Link" name="twitter_link" value="<?php echo (($get_footer_data->twitter_link != '')? $get_footer_data->twitter_link:'')?>">
                                         </div>
 
                                     </div>
@@ -173,7 +173,7 @@
                                               <span class="input-group-btn">
                                                 <button type="button" class="btn btn-white"><i class="fa fa-pinterest"></i></button>
                                               </span>
-                                            <input type="text" class="form-control" placeholder="Enter Pinterest Link">
+                                            <input type="text" class="form-control" placeholder="Enter Pinterest Link" name="pinterest_link" value="<?php echo (($get_footer_data->pinterest_link != '')? $get_footer_data->pinterest_link:'')?>">
                                         </div>
 
                                     </div>
@@ -189,14 +189,14 @@
 								<div class="form-group">
                                     <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">About Title</label>
                                     <div class="col-lg-9">
-                                        <input type="text" class="form-control" id="inputpropsize" placeholder="About Title" name="prop_size" >
+                                        <input type="text" class="form-control" id="inputpropsize" placeholder="About Title" name="about_title" value="<?php echo (($get_footer_data->about_title != '')? $get_footer_data->about_title:'')?>">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
 								<div class="form-group">
 									<label class="col-lg-3 col-sm-3 control-label">About Us Content</label>
 									<div class="col-lg-9">
-										<textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+										<textarea name="about_content" class="form-control" id="" cols="30" rows="10"><?php echo (($get_footer_data->about_details != '')? $get_footer_data->about_details:'')?></textarea>
 									</div>
 								</div>
                             </div>

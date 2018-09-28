@@ -203,194 +203,66 @@
                                     <div class="form-group">
                                         <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">No. of Bathrooms</label>
                                         <div class="col-lg-8">
-                                            <input type="number" class="form-control" name="bathroom" value="<?php echo $get_all_rental_property->bathrooms?>">
+                                            <input type="number" class="form-control" name="bathroom" value="<?php echo $get_all_rental_property->bathrooms;?>">
                                             <!--<p class="help-block">Example block-level help text here.</p>-->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Washer</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="washer">
-                                                <option value="" <?php echo (($get_all_rental_property->washer == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->washer == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->washer == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">TV</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="television">
-                                                <option value="" <?php echo (($get_all_rental_property->television == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->television == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->television == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Aircon</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="aircon">
-                                                <option value="" <?php echo (($get_all_rental_property->aircon == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->aircon == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->aircon == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Wifi</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="wifi">
-                                                <option value="" <?php echo (($get_all_rental_property->wifi == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->wifi == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->wifi == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">BBQ</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="bbq">
-                                                <option value="" <?php echo (($get_all_rental_property->bbq == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->bbq == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->bbq == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Pool</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="private_pool">
-                                                <option value="" <?php echo (($get_all_rental_property->private_pool == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->private_pool == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->private_pool == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Parking</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="private_parking">
-                                                <option value="" <?php echo (($get_all_rental_property->private_parking == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->private_parking == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->private_parking == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Garden</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="private_garden">
-                                                <option value="" <?php echo (($get_all_rental_property->private_garden == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->private_garden == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->private_garden == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Pets Allowed</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="pet_allowed">
-                                                <option value="" <?php echo (($get_all_rental_property->pet_allowed == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->pet_allowed == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->pet_allowed == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Family Friendly</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="family_friendly">
-                                                <option value="" <?php echo (($get_all_rental_property->family_friendly == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->family_friendly == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->family_friendly == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Village House</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="village_house">
-                                                <option value="" <?php echo (($get_all_rental_property->village_house == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->village_house == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->village_house == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Rural Setting</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="rural_setting">
-                                                <option value="" <?php echo (($get_all_rental_property->rural_setting == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->rural_setting == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->rural_setting == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Romantic for Two</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="romantic_for_two">
-                                                <option value="" <?php echo (($get_all_rental_property->romantic_for_two == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->romantic_for_two == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->romantic_for_two == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Cosy Cottage</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control m-b-10" name="cosy_cottage">
-                                                <option value="" <?php echo (($get_all_rental_property->cosy_cottage == "")?'selected':'')?>>Please Select</option>
-                                                <option value="yes" <?php echo (($get_all_rental_property->cosy_cottage == "yes")?'selected':'')?>>Yes</option>
-                                                <option value="no" <?php echo (($get_all_rental_property->cosy_cottage == "no")?'selected':'')?>>No</option>
-                                            </select>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                    </div>
-							     </div>
-                                </div>
+
+								 <div class="col-lg-10">
+							 	<div class="form-group">
+									<?php
+										$amenities = explode(",",$get_all_rental_property->amenities);
+									?>
+									<label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Add On</label>
+									<div class="col-lg-10">
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Washer" name="amenities[]" id="checkbox-99" <?php echo (in_array("Washer",$amenities)?'checked':'')?>> <label for="checkbox-99">Washer</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="TV" name="amenities[]" id="checkbox-100" <?php echo (in_array("TV",$amenities)?'checked':'')?>> <label for="checkbox-100" >TV</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Aircon" name="amenities[]" id="checkbox-101" <?php echo (in_array("Aircon",$amenities)?'checked':'')?>> <label for="checkbox-101" >Aircon</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Wifi" name="amenities[]" id="checkbox-102" <?php echo (in_array("Wifi",$amenities)?'checked':'')?>> <label for="checkbox-102" >Wifi</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="BBQ" name="amenities[]" id="checkbox-103" <?php echo (in_array("BBQ",$amenities)?'checked':'')?>> <label for="checkbox-103">BBQ</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Pool" name="amenities[]" id="checkbox-104" <?php echo (in_array("Private Pool",$amenities)?'checked':'')?>> <label for="checkbox-104" >Private Pool</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Parking" name="amenities[]" id="checkbox-105" <?php echo (in_array("Private Parking",$amenities)?'checked':'')?>> <label for="checkbox-105" >Private Parking</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Garden" name="amenities[]" id="checkbox-106" <?php echo (in_array("Private Garden",$amenities)?'checked':'')?>> <label for="checkbox-106" >Private Garden</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Pets Allowed" name="amenities[]" id="checkbox-107" <?php echo (in_array("Pets Allowed",$amenities)?'checked':'')?>> <label for="checkbox-107" >Pets Allowed</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Family Friendly" name="amenities[]" id="checkbox-108" <?php echo (in_array("Family Friendly",$amenities)?'checked':'')?>> <label for="checkbox-108" >Family Friendly</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Village House" name="amenities[]" id="checkbox-109" <?php echo (in_array("Village House",$amenities)?'checked':'')?>> <label for="checkbox-109" >Village House</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Rural Setting" name="amenities[]" id="checkbox-110" <?php echo (in_array("Rural Setting",$amenities)?'checked':'')?>> <label for="checkbox-110" >Rural Setting</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Romantic for Two" name="amenities[]" id="checkbox-111" <?php echo (in_array("Romantic for Two",$amenities)?'checked':'')?>> <label for="checkbox-111" >Romantic for Two</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Cosy Cottage" name="amenities[]" id="checkbox-112" <?php echo (in_array("Cosy Cottage",$amenities)?'checked':'')?>> <label for="checkbox-112" >Cosy Cottage</label>
+										</label>
+
+									</div>
+								</div>
+							 </div>
+                            </div>
                             <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
                                 <b>Images</b>
                             </header>

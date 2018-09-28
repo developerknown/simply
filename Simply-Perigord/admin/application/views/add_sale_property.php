@@ -185,71 +185,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Pool</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_pool">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Parking</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_parking">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Garden</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_garden">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Village House</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="village_house">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Rural Setting</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="rural_setting">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
+							 <div class="col-lg-10">
+							 	<div class="form-group">
+									<label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Add On</label>
+									<div class="col-lg-10">
+								
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Pool" name="amenities[]" id="checkbox-104"> <label for="checkbox-104">Private Pool</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Parking" name="amenities[]" id="checkbox-105"> <label for="checkbox-105">Private Parking</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Garden" name="amenities[]" id="checkbox-106"> <label for="checkbox-106">Private Garden</label>
+										</label>
+										
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Village House" name="amenities[]" id="checkbox-109"> <label for="checkbox-109">Village House</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Rural Setting" name="amenities[]" id="checkbox-110"> <label for="checkbox-110">Rural Setting</label>
+										</label>
+									
+
+									</div>
+								</div>
+							 </div>
+                
                         </div>
                          <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
                             <b>Images</b>

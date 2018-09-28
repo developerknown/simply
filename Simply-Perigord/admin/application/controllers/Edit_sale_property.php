@@ -24,11 +24,7 @@ class Edit_sale_property extends CI_Controller {
 		$price = $this->input->post('price');*/
 		$bedroom = $this->input->post('bedroom');
 		$bathroom = $this->input->post('bathroom');
-		$private_pool = $this->input->post('private_pool');
-		$private_parking = $this->input->post('private_parking');
-		$private_garden = $this->input->post('private_garden');
-		$village_house = $this->input->post('village_house');
-		$rural_setting = $this->input->post('rural_setting');
+		$amenities = implode(",",$this->input->post('amenities'));
 		$date = time();
 		$tags = implode("," ,$this->input->post('property_tags'));
 
@@ -39,11 +35,7 @@ class Edit_sale_property extends CI_Controller {
 				"size" => $prop_size,
 				"bedrooms" => $bedroom,
 				"bathrooms" => $bathroom,
-				"private_pool" => $private_pool,
-				"private_parking" => $private_parking,
-				"private_garden" => $private_garden,
-				"village_house" => $village_house,
-				"rural_setting" => $rural_setting,
+				"amenities" => $amenities,
 				"status" => '1',
 				"tags" => $tags
 		);	

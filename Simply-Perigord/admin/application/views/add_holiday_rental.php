@@ -146,38 +146,65 @@
                                     </div>
                                 </div>
                               </div>
-                              <div class="col-lg-6">
-                                <div class="add-more-contz">
-                                    <div class="form-group" id="dynamic_field">
-                                    <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">Seasonal Price</label>
-                                        <div class="col-lg-3">
-                                            <select class="form-control m-b-10" name="season">
-                                                <option value="">Please Select</option>
-                                               <?php
-                                                    foreach($get_seasons AS $each_season){
-                                                ?>
-                                                <option value="<?php echo $each_season->season_id?>"><?php echo $each_season->season_name?></option>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </select>
+                              <div class="col-lg-12">
+							  <?php
+                                   foreach($get_seasons AS $each_season){
+                                   ?>
+                                    <div class="form-group" >
+                                    <label for="inputpropsize" class="col-lg-2 col-sm-2 control-label">Seasonal Price</label>
+                                        <div class="col-lg-4">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="" value="<?php echo $each_season->season_name?>" name="price" disabled>
                                         </div>
-                                        <div class="col-lg-3">
+									<div class="col-lg-6 dakhate_hbe" style="" id="">
+                                <div class="">
+                                    <div class="form-group" id="">
+                                    
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 1 To 4 Guests" name="price" disabled >
+                                        </div>
+                                        <div class="col-lg-6">
                                             <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
                                         </div>
-                                        <div class="col-lg-2">
-                                            <a href="javascript:void(0);" class="btn btn-secondary add-more" onclick="add_more_attri()" style="padding:6px 3px;">Add More</a>
+                                       
+                                  </div>
+
+								   <div class="form-group" id="dynamic_field">
+                                   
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 5 Guests" name="price" disabled>
                                         </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
+                                        </div>
+                                       
+                                  </div>
+								  <div class="form-group" id="dynamic_field">
+                                    
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 6 Guests" name="price" disabled>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
+                                        </div>
+                                       
                                   </div>
                                 </div>
+								<span  style="color:red;font-size:10px;"><span style="">*</span>Weekly Rate</span>  
                               </div>
+                                     
+                              </div>
+							  
+							    <?php
+                                                    }
+                                                ?>
                             </div>
-                            <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
+							
+                            <header class="panel-heading col-lg-12" style="border-bottom:0px;">
                                 <b>Amenities</b>
                             </header>
                             <div class="row">
                               <div class="col-lg-6">
-								<div class="form-group">
+								<div class="form-group" style="padding-left:10px;">
                                     <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">No. of Bedrooms</label>
                                     <div class="col-lg-8">
                                         <select class="form-control m-b-10" name="bedroom">
@@ -204,195 +231,64 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Washer</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="washer">
-                                            <option value="">Please Select</option>
-											<option value="yes">Yes</option>
-											<option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">TV</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="television">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Aircon</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="aircon">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Wifi</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="wifi">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">BBQ</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="bbq">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Pool</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_pool">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Parking</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_parking">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Private Garden</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="private_garden">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Pets Allowed</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="pet_allowed">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Family Friendly</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="family_friendly">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Village House</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="village_house">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Rural Setting</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="rural_setting">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Romantic for Two</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="romantic_for_two">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Cosy Cottage</label>
-                                    <div class="col-lg-8">
-                                        <select class="form-control m-b-10" name="cosy_cottage">
-											<option value="">Please Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
-                                    </div>
-                                </div>
-                            </div>
+							 <div class="col-lg-10">
+							 	<div class="form-group" style="padding-left:10px;">
+									<label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Add On</label>
+									<div class="col-lg-10">
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Washer" name="amenities[]" id="checkbox-99"> <label for="checkbox-99">Washer</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="TV" name="amenities[]" id="checkbox-100"> <label for="checkbox-100">TV</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Aircon" name="amenities[]" id="checkbox-101"> <label for="checkbox-101">Aircon</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Wifi" name="amenities[]" id="checkbox-102"> <label for="checkbox-102">Wifi</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="BBQ" name="amenities[]" id="checkbox-103"> <label for="checkbox-103">BBQ</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Pool" name="amenities[]" id="checkbox-104"> <label for="checkbox-104">Private Pool</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Parking" name="amenities[]" id="checkbox-105"> <label for="checkbox-105">Private Parking</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Private Garden" name="amenities[]" id="checkbox-106"> <label for="checkbox-106">Private Garden</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Pets Allowed" name="amenities[]" id="checkbox-107"> <label for="checkbox-107">Pets Allowed</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Family Friendly" name="amenities[]" id="checkbox-108"> <label for="checkbox-108">Family Friendly</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Village House" name="amenities[]" id="checkbox-109"> <label for="checkbox-109">Village House</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Rural Setting" name="amenities[]" id="checkbox-110"> <label for="checkbox-110">Rural Setting</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Romantic for Two" name="amenities[]" id="checkbox-111"> <label for="checkbox-111">Romantic for Two</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Cosy Cottage" name="amenities[]" id="checkbox-112"> <label for="checkbox-112">Cosy Cottage</label>
+										</label>
+
+									</div>
+								</div>
+							 </div>
+                         
                         </div>
-                        <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
+                        <header class="panel-heading" style="border-bottom:0px;">
                             <b>Amenities</b>
                         </header>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="form-group">
+                                <div class="form-group" style="padding-left:10px;">
                                     <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Property Image</label>
                                     <div class="col-lg-8">
                                         <div class="col-md-6">
@@ -444,7 +340,7 @@ function preview_images()
     function add_more_attri()
     {
          var get_seasons = <?php echo json_encode($get_seasons)?>;
-         var htmlz = "<div class='form-group atrri_add_cont'><label for='inputpropsize' class='col-lg-3 col-sm-3 control-label'></label><div class='col-lg-3'><select class='form-control m-b-10' name='season' id='season_fetch'><option value=''>Please Select</option></select></div><div class='col-lg-3'><input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price'></div><div class='col-lg-2'><a href='javascript:void(0);' class='remove control-label' style='color:#ef5350;'><i class='fa fa-trash' style='font-size:1.9rem;'></i></a></div></div>";
+         var htmlz = "<div class='form-group atrri_add_cont'><label for='inputpropsize' class='col-lg-3 col-sm-3 control-label'>Seasonal Price</label><div class='col-lg-6'><select class='form-control m-b-10' name='season' onchange='testMessage()' id='season_fetch'><option value=''>Please Select</option></select></div><div class='col-lg-2'><a href='javascript:void(0);' class='remove control-label' style='color:#ef5350;'><i class='fa fa-trash' style='font-size:1.9rem;'></i></a></div></div>";
 
          $(".add-more-contz").append(htmlz);
        
@@ -458,6 +354,21 @@ function preview_images()
           $(this).parents(".atrri_add_cont").remove();
       });
     }
+</script>
+
+<script type="text/javascript">
+  
+
+    function testMessage(){ 
+      $('.dakhate_hbe').show(); 
+    }
+
+	 /*function testMessage(){ 
+		 
+		var something = "<div class='col-lg-12 ' style='float:right;' id='dakhate_hbe'> <div class=''> <div class='form-group' id=''> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 1 To 4 Guests' name='price' disabled > </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><div class='form-group' id='dynamic_field'> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 5 Guests' name='price' disabled> </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><div class='form-group' id='dynamic_field'> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 6 Guests' name='price' disabled> </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><span style='color:red;font-size:12px;'>Weekly Rate</span></div></div>";
+        $( ".add-more-contz" ).append(something); 
+	    $(".add-more").show();	
+    }*/
 </script>
 <!--bootstrap-fileinput-master-->
 <script type="text/javascript" src="<?php echo base_url('js/fileinput.js');?>"></script>
