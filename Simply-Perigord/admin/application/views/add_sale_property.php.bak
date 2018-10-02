@@ -280,7 +280,7 @@ function preview_images()
         });
 
     
-      $("body").on("click",".remove",function(){ 
+    $("body").on("click",".remove",function(){ 
           $(this).parents(".atrri_add_cont").remove();x--;
       });
     }

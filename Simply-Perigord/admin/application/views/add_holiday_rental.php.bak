@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="javascript:;" type="image/png">
 
-    <title>Add SALE Property | Simply</title>
+    <title>Add Holiday Rental Property | Simply</title>
 	<?php $this->load->view('common/metalinks');?>
     <!--bootstrap-fileinput-master-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/fileinput.css');?>" />
@@ -21,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/multiple-image-upload.css');?>"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2.css');?>"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/select2-bootstrap.css');?>"/>
+	
     <!--iCheck-->
     <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet">
 </head>
@@ -38,7 +40,7 @@
             <!-- page head start-->
             <div class="page-head">
                 <h3 class="m-b-less">
-                    Add Property for SALE 
+                    Add Property for Holiday Rental
                 </h3>
             </div>
             <!-- page head end-->
@@ -51,22 +53,22 @@
                     <section class="panel">
                         <div class="panel-body">
                             <?php
-                                if($this->session->flashdata('add_sale_prop_successfull')){
+                                if($this->session->flashdata('add_holiday_rental_successfull')){
                             ?>
-                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('add_sale_prop_successfull');?></strong> </div>
+                                <div class="alert alert-success"> <strong><?php echo $this->session->flashdata('add_holiday_rental_successfull');?></strong> </div>
                             <?php
-                                }else if($this->session->flashdata('add_sale_prop_failed')){
+                                }else if($this->session->flashdata('add_holiday_rental_failed')){
                             ?>
-                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('add_sale_prop_failed');?></strong> </div>
+                                <div class="alert alert-danger"> <strong><?php echo $this->session->flashdata('add_holiday_rental_failed');?></strong> </div>
                             <?php
                                 }
                             ?>
-                            <form class="form-horizontal" role="form" method="POST" action="<?php echo base_url('add_sale_property/add_new_sale_property');?>" enctype="multipart/form-data">
-                        <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
-                            <b>Property Information</b>
-                        </header>
-                         <div class="row">
-                            <div class="col-lg-6">
+                            <form class="form-horizontal" role="form" action="<?php echo base_url('add_holiday_rental/add_new_rental');?>" enctype="multipart/form-data" method="POST"> 
+                            <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
+                                <b>Property Information</b>
+                            </header>
+                            <div class="row">
+                              <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="inputpropname" class="col-lg-3 col-sm-3 control-label">Property Name</label>
                                     <div class="col-lg-8">
@@ -74,16 +76,16 @@
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
+                              </div>
+                              <div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Property Location</label>
                                     <div class="col-lg-8">
-									
+                                        <!--<p class="help-block">Example block-level help text here.</p>-->
 										<select class="form-control m-b-10" name="prop_location">
 											<option value="">Please Select</option>
 											<?php
-											   $get_location = $this->add_sale_property_m->get_location();
+											   $get_location = $this->add_holiday_rental_m->get_location();
 											   //print_r($get_location);
 											   foreach($get_location As $location)
 											   {
@@ -93,13 +95,10 @@
 											   }
 											?>
 										</select>
-                                        <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
-                            </div>
-
-
-							<div class="col-lg-6">
+                              </div>
+							   <div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputproplocation" class="col-lg-3 col-sm-3 control-label">Add Property Tags</label>
                                     <div class="col-lg-8">
@@ -116,48 +115,97 @@
                                     </div>
                                 </div>
                               </div>
-                            <div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">Property Size</label>
+                              <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">House Sleeping</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="inputpropsize" placeholder="Property Size" name="prop_size">
+                                        <input type="number" class="form-control" name="house_sleeping">
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!--<div class="col-lg-6">
-                                <div class="add-more-contz">
-                                    <div class="form-group">
-                                    <label for="inputpropsize" class="col-lg-3 col-sm-3 control-label">Seasonal Price</label>
-                                        <div class="col-lg-3">
-                                            <select class="form-control m-b-10" name="season">
-                                                <option value="">Please Select</option>
-                                                <?php
-                                                    foreach($get_seasons AS $each_season){
-                                                ?>
-                                                <option value="<?php echo $each_season->season_id?>"><?php echo $each_season->season_name?></option>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </select>
+                              </div>
+                              <!--<div class="col-lg-6">
+								<div class="form-group">
+                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Date</label>
+                                    <div class="col-lg-8">
+                                       <div class="input-group input-large custom-date-range" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
+											<input type="text" class="form-control dpd1" name="date_from">
+											<span class="input-group-addon">To</span>
+											<input type="text" class="form-control dpd2" name="date_to">
+										</div>
+                                        <!--<p class="help-block">Example block-level help text here.</p>
+                                    </div>
+                                </div>
+                              </div>-->
+                              <div class="col-lg-6">
+								<div class="form-group">
+                                    <label for="inputpropguestallowed" class="col-lg-3 col-sm-3 control-label">No. of guests</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="inputpropguestallowed" placeholder="Number of guest allowed" name="guest_allowed">
+                                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-12">
+							  <?php
+                                   foreach($get_seasons AS $each_season){
+                                   ?>
+                                    <div class="form-group" >
+                                    <label for="inputpropsize" class="col-lg-2 col-sm-2 control-label">Seasonal Price</label>
+                                        <div class="col-lg-4">
+											<span style=""><?php echo $each_season->season_name;?></span>
+											<input type="hidden" class="form-control" id="inputpropsize" placeholder="" value="<?php echo $each_season->season_id;?>" name="season[]">
                                         </div>
-                                        <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price">
+									<div class="col-lg-6 dakhate_hbe" style="" id="">
+                                <div class="">
+                                    <div class="form-group" id="">
+                                    
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 1 To 4 Guests" disabled >
                                         </div>
-                                        <div class="col-lg-2">
-                                            <a href="javascript:void(0);" class="btn btn-secondary add-more" onclick="add_more_attri()" style="padding:6px 3px;">Add More</a>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="four_price[]" >
                                         </div>
+                                       
+                                  </div>
+
+								   <div class="form-group" id="dynamic_field">
+                                   
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 5 Guests" disabled>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="five_price[]" >
+                                        </div>
+                                       
+                                  </div>
+								  <div class="form-group" id="dynamic_field">
+                                    
+                                        <div class="col-lg-6">
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 6 Guests" disabled>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="six_price[]" >
+                                        </div>
+                                       
                                   </div>
                                 </div>
-                             </div>-->
-                        </div>
-                         <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
-                            <b>Amenities</b>
-                        </header>
-                        <div class="row">
-                            <div class="col-lg-6">
-								<div class="form-group">
+								<span  style="color:red;font-size:10px;"><span style="">*</span>Weekly Rate</span>  
+                              </div>
+                                     
+                              </div>
+							  
+							    <?php
+                                                    }
+                                                ?>
+                            </div>
+							
+                            <header class="panel-heading col-lg-12" style="border-bottom:0px;">
+                                <b>Amenities</b>
+                            </header>
+                            <div class="row">
+                              <div class="col-lg-6">
+								<div class="form-group" style="padding-left:10px;">
                                     <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">No. of Bedrooms</label>
                                     <div class="col-lg-8">
                                         <select class="form-control m-b-10" name="bedroom">
@@ -169,8 +217,8 @@
                                         <!--<p class="help-block">Example block-level help text here.</p>-->
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
+                              </div>
+                              <div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">No. of Bathrooms</label>
                                     <div class="col-lg-8">
@@ -185,10 +233,24 @@
                                 </div>
                             </div>
 							 <div class="col-lg-10">
-							 	<div class="form-group">
+							 	<div class="form-group" style="padding-left:10px;">
 									<label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Add On</label>
 									<div class="col-lg-10">
-								
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Washer" name="amenities[]" id="checkbox-99"> <label for="checkbox-99">Washer</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="TV" name="amenities[]" id="checkbox-100"> <label for="checkbox-100">TV</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Aircon" name="amenities[]" id="checkbox-101"> <label for="checkbox-101">Aircon</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Wifi" name="amenities[]" id="checkbox-102"> <label for="checkbox-102">Wifi</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="BBQ" name="amenities[]" id="checkbox-103"> <label for="checkbox-103">BBQ</label>
+										</label>
 										<label class="checkbox-custom inline check-success">
 											<input type="checkbox" value="Private Pool" name="amenities[]" id="checkbox-104"> <label for="checkbox-104">Private Pool</label>
 										</label>
@@ -198,27 +260,37 @@
 										<label class="checkbox-custom inline check-success">
 											<input type="checkbox" value="Private Garden" name="amenities[]" id="checkbox-106"> <label for="checkbox-106">Private Garden</label>
 										</label>
-										
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Pets Allowed" name="amenities[]" id="checkbox-107"> <label for="checkbox-107">Pets Allowed</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Family Friendly" name="amenities[]" id="checkbox-108"> <label for="checkbox-108">Family Friendly</label>
+										</label>
 										<label class="checkbox-custom inline check-success">
 											<input type="checkbox" value="Village House" name="amenities[]" id="checkbox-109"> <label for="checkbox-109">Village House</label>
 										</label>
 										<label class="checkbox-custom inline check-success">
 											<input type="checkbox" value="Rural Setting" name="amenities[]" id="checkbox-110"> <label for="checkbox-110">Rural Setting</label>
 										</label>
-									
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Romantic for Two" name="amenities[]" id="checkbox-111"> <label for="checkbox-111">Romantic for Two</label>
+										</label>
+										<label class="checkbox-custom inline check-success">
+											<input type="checkbox" value="Cosy Cottage" name="amenities[]" id="checkbox-112"> <label for="checkbox-112">Cosy Cottage</label>
+										</label>
 
 									</div>
 								</div>
 							 </div>
-                
+                         
                         </div>
-                         <header class="panel-heading" style="border-bottom:0px;padding-left:0px;">
-                            <b>Images</b>
+                        <header class="panel-heading" style="border-bottom:0px;">
+                            <b>Amenities</b>
                         </header>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Property Image</label>
+                                <div class="form-group" style="padding-left:10px;">
+                                    <label for="inputprophouseSleeping" class="col-lg-2 col-sm-2 control-label">Property Image</label>
                                     <div class="col-lg-8">
                                         <div class="col-md-6">
                                             <input type="file" class="form-control" id="images" name="userfile[]" onchange="preview_images();" multiple/>
@@ -235,20 +307,20 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-lg-12" style="text-align:center">
+                                <div class="col-lg-offset-9 col-lg-10">
 									<button type="reset" class="btn btn-secondary">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
+                          </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
 
-    </div>
-            <!--body wrapper end-->
+        </div>
+        <!--body wrapper end-->
 
            <?php $this->load->view('common/footer');?>
 
@@ -261,7 +333,7 @@ function preview_images()
  var total_file=document.getElementById("images").files.length;
  for(var i=0;i<total_file;i++)
  {
-  $('#image_preview').append("<div class='col-md-3'><img class='img-responsive' style='height:100px;padding:3px;' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+  $('#image_preview').append("<div class='col-lg-3'><img class='img-responsive' style='height:100px;padding:3px;' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
  }
 }
 </script>
@@ -269,21 +341,35 @@ function preview_images()
     function add_more_attri()
     {
          var get_seasons = <?php echo json_encode($get_seasons)?>;
-        
-         var htmlz = "<div class='form-group atrri_add_cont'><label for='inputpropsize' class='col-lg-3 col-sm-3 control-label'></label><div class='col-lg-3'><select class='form-control m-b-10' name='season' id='season_fetch'><option value=''>Please Select</option></select></div><div class='col-lg-3'><input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price'></div><div class='col-lg-2'><a href='javascript:void(0);' class='remove control-label' style='color:#ef5350;'><i class='fa fa-trash' style='font-size:1.9rem;'></i></a></div></div>";
+         var htmlz = "<div class='form-group atrri_add_cont'><label for='inputpropsize' class='col-lg-3 col-sm-3 control-label'>Seasonal Price</label><div class='col-lg-6'><select class='form-control m-b-10' name='season' onchange='testMessage()' id='season_fetch'><option value=''>Please Select</option></select></div><div class='col-lg-2'><a href='javascript:void(0);' class='remove control-label' style='color:#ef5350;'><i class='fa fa-trash' style='font-size:1.9rem;'></i></a></div></div>";
 
          $(".add-more-contz").append(htmlz);
-
+       
         $.each(get_seasons, function () {
             var optioncurrHTML = '<option value="'+this.season_id+'">'+this.season_name+'</option>';
             $("#season_fetch").append(optioncurrHTML);
         });
 
     
-      $("body").on("click",".remove",function(){ 
-          $(this).parents(".atrri_add_cont").remove();x--;
+    $("body").on("click",".remove",function(){ 
+          $(this).parents(".atrri_add_cont").remove();
       });
     }
+</script>
+
+<script type="text/javascript">
+  
+
+    function testMessage(){ 
+      $('.dakhate_hbe').show(); 
+    }
+
+	 /*function testMessage(){ 
+		 
+		var something = "<div class='col-lg-12 ' style='float:right;' id='dakhate_hbe'> <div class=''> <div class='form-group' id=''> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 1 To 4 Guests' name='price' disabled > </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><div class='form-group' id='dynamic_field'> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 5 Guests' name='price' disabled> </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><div class='form-group' id='dynamic_field'> <div class='col-lg-6'><input type='text' class='form-control' id='inputpropsize' placeholder='For 6 Guests' name='price' disabled> </div><div class='col-lg-5'> <input type='text' class='form-control' id='inputpropsize' placeholder='Price' name='price' > </div></div><span style='color:red;font-size:12px;'>Weekly Rate</span></div></div>";
+        $( ".add-more-contz" ).append(something); 
+	    $(".add-more").show();	
+    }*/
 </script>
 <!--bootstrap-fileinput-master-->
 <script type="text/javascript" src="<?php echo base_url('js/fileinput.js');?>"></script>
@@ -298,6 +384,8 @@ function preview_images()
 <script type="text/javascript" src="<?php echo base_url('js/multiple-image-upload.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/select2.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/select2-init.js');?>"></script>
+
+
 
 <!--picker initialization-->
 <script src="<?php echo base_url('js/picker-init.js');?>"></script>

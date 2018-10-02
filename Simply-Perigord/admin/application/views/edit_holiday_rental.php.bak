@@ -188,7 +188,7 @@
 											<input type="text" class="form-control" id="inputpropsize" placeholder="For 5 Guests" disabled>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" value="<?php echo $five[$i];?>" name="five_price[]" >
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="five_price[]" >
                                         </div>
                                        
                                   </div>
@@ -198,7 +198,7 @@
 											<input type="text" class="form-control" id="inputpropsize" placeholder="For 6 Guests" disabled>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" value="<?php echo $six[$i];?>" name="six_price[]" >
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="six_price[]" >
                                         </div>
                                        
                                   </div>

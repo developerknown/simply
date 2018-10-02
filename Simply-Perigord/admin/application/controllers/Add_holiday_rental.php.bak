@@ -59,7 +59,7 @@ class Add_holiday_rental extends CI_Controller {
 		);	
 
 		$insert_new_holiday_rental = $this->add_holiday_rental_m->add_new_rental_table($records);
-		if(sizeof($insert_new_holiday_rental) > 0){
+		if($insert_new_holiday_rental){
 			
 			$last_holiday_rental_id = $insert_new_holiday_rental;
 			$this->load->library('upload');

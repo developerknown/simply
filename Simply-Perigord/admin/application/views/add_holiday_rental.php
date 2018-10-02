@@ -124,19 +124,7 @@
                                     </div>
                                 </div>
                               </div>
-                              <!--<div class="col-lg-6">
-								<div class="form-group">
-                                    <label for="inputprophouseSleeping" class="col-lg-3 col-sm-3 control-label">Date</label>
-                                    <div class="col-lg-8">
-                                       <div class="input-group input-large custom-date-range" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
-											<input type="text" class="form-control dpd1" name="date_from">
-											<span class="input-group-addon">To</span>
-											<input type="text" class="form-control dpd2" name="date_to">
-										</div>
-                                        <!--<p class="help-block">Example block-level help text here.</p>
-                                    </div>
-                                </div>
-                              </div>-->
+
                               <div class="col-lg-6">
 								<div class="form-group">
                                     <label for="inputpropguestallowed" class="col-lg-3 col-sm-3 control-label">No. of guests</label>
@@ -153,17 +141,18 @@
                                     <div class="form-group" >
                                     <label for="inputpropsize" class="col-lg-2 col-sm-2 control-label">Seasonal Price</label>
                                         <div class="col-lg-4">
-											<input type="text" class="form-control" id="inputpropsize" placeholder="" value="<?php echo $each_season->season_name?>" name="price" disabled>
+											<span style=""><?php echo $each_season->season_name;?></span>
+											<input type="hidden" class="form-control" id="inputpropsize" placeholder="" value="<?php echo $each_season->season_id;?>" name="season[]">
                                         </div>
 									<div class="col-lg-6 dakhate_hbe" style="" id="">
                                 <div class="">
                                     <div class="form-group" id="">
                                     
                                         <div class="col-lg-6">
-											<input type="text" class="form-control" id="inputpropsize" placeholder="For 1 To 4 Guests" name="price" disabled >
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 1 To 4 Guests" disabled >
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="four_price[]" >
                                         </div>
                                        
                                   </div>
@@ -171,20 +160,20 @@
 								   <div class="form-group" id="dynamic_field">
                                    
                                         <div class="col-lg-6">
-											<input type="text" class="form-control" id="inputpropsize" placeholder="For 5 Guests" name="price" disabled>
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 5 Guests" disabled>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="five_price[]" >
                                         </div>
                                        
                                   </div>
 								  <div class="form-group" id="dynamic_field">
                                     
                                         <div class="col-lg-6">
-											<input type="text" class="form-control" id="inputpropsize" placeholder="For 6 Guests" name="price" disabled>
+											<input type="text" class="form-control" id="inputpropsize" placeholder="For 6 Guests" disabled>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="price" >
+                                            <input type="text" class="form-control" id="inputpropsize" placeholder="Price" name="six_price[]" >
                                         </div>
                                        
                                   </div>

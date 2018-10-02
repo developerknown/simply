@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 27, 2018 at 10:15 AM
+-- Generation Time: Sep 28, 2018 at 10:46 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -228,6 +228,22 @@ CREATE TABLE IF NOT EXISTS `season` (
 
 INSERT INTO `season` (`season_id`, `season_name`, `date_from`, `date_to`, `status`, `date_added`) VALUES
 (1, 'Summer', '04/03/2018', '09/30/2018', '1', '1537797062');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seasonal_pricing_structure`
+--
+
+DROP TABLE IF EXISTS `seasonal_pricing_structure`;
+CREATE TABLE IF NOT EXISTS `seasonal_pricing_structure` (
+  `seasonal_id` int(255) NOT NULL AUTO_INCREMENT,
+  `season_id` varchar(255) NOT NULL,
+  `min_guest` varchar(255) NOT NULL,
+  `max_guest` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  PRIMARY KEY (`seasonal_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

@@ -7,7 +7,7 @@ class Edit_holiday_rental extends CI_Controller {
 	{
 		$this->load->model('edit_holiday_rental_m');
 		$rental_prop_id = $this->uri->segment(2);
-		$data['fetch_seasons'] = $this->edit_holiday_rental_m->fetch_seasons();
+		$data['get_seasons'] = $this->edit_holiday_rental_m->fetch_seasons();
 		$data['get_all_rental_property'] = $this->edit_holiday_rental_m->fetch_rental_property($rental_prop_id);		
 		$this->load->view('edit_holiday_rental',$data);
 	}
@@ -18,8 +18,15 @@ class Edit_holiday_rental extends CI_Controller {
 		$rental_prop_id = $this->input->post('rental_prop_id');;
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
-		$season = implode("," ,$this->input->post('season'));
-		$price = implode(",",$this->input->post('price'));
+		$season = $this->input->post('season');
+		$four = $this->input->post('four_price');
+		$five = $this->input->post('five_price');
+		$six = $this->input->post('six_price');
+		$season_array = implode(",",$season);
+		$four_array = implode(",",$four);
+		$five_array = implode(",",$five);
+		$six_array = implode(",",$six);
+		$price = "";
 		$house_sleeping = $this->input->post('house_sleeping');
 		$date_from = $this->input->post('date_from');
 		$date_to = $this->input->post('date_to');
@@ -35,22 +42,26 @@ class Edit_holiday_rental extends CI_Controller {
 				"name" => $prop_name,
 				"location" => $prop_location,
 				"max_guest" => $house_sleeping,
-				"season" => $season,
-				"price" => $price,
 				"booking_start_date" => $date_from,
 				"booking_end_date" => $date_to,
+				"season" => $season_array,
+				"one_to_four" => $four_array,
+			    "five" => $five_array,
+			    "six" => $six_array,
+				"price" => $price,
 				"guest_number" => $guest_allowed,
 				"bedrooms" => $bedroom,
 				"bathrooms" => $bathroom,
 				"amenities" => $amenities,
 				"booked_date" => $date,
 				"status" => '1',
-				"tags" => $tags
+				"location_country" => $country,
+				"tags" => $tags,
 		);	
 
 
 		$update_new_rental_property = $this->edit_holiday_rental_m->update_property_rental_table($records,$rental_prop_id);
-		if($update_new_rental_property){
+		if(sizeof($update_new_rental_property) > 0){
 
 			/********************************************************/
 			$last_rent_property_id = $rental_prop_id;
@@ -59,7 +70,7 @@ class Edit_holiday_rental extends CI_Controller {
 		    $files = $_FILES;
 		    $cpt = count($_FILES['userfile']['name']);
 		    
-		    for($i=0; $i<$cpt; $i++){           
+		    for($i=1; $i<$cpt; $i++){           
 		        
 		        $_FILES['userfile']['name']= $files['userfile']['name'][$i];
 		        $_FILES['userfile']['type']= $files['userfile']['type'][$i];
@@ -72,7 +83,7 @@ class Edit_holiday_rental extends CI_Controller {
 		        $dataInfo[] = $this->upload->data();
 		    }
 		   
-		    for($i=0; $i<$cpt; $i++){
+		    for($i=1; $i<$cpt; $i++){
 		    	$data = array(
 			        'holiday_rental_id' => $last_rent_property_id,
 			        'image' => $dataInfo[$i]['file_name'],

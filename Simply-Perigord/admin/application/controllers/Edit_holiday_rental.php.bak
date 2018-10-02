@@ -1,22 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Add_holiday_rental extends CI_Controller {
+class Edit_holiday_rental extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('add_holiday_rental_m');
-		$data['get_seasons'] = $this->add_holiday_rental_m->fetch_seasons();
-		$this->load->view('add_holiday_rental',$data);
+		$this->load->model('edit_holiday_rental_m');
+		$rental_prop_id = $this->uri->segment(2);
+		$data['get_seasons'] = $this->edit_holiday_rental_m->fetch_seasons();
+		$data['get_all_rental_property'] = $this->edit_holiday_rental_m->fetch_rental_property($rental_prop_id);		
+		$this->load->view('edit_holiday_rental',$data);
 	}
 
-	public function add_new_rental(){
-		$this->load->model('add_holiday_rental_m');
+	public function edit_defined_rental_property(){
+
+		$this->load->model('edit_holiday_rental_m');
+		$rental_prop_id = $this->input->post('rental_prop_id');;
 		$prop_name = $this->input->post('prop_name');
 		$prop_location = $this->input->post('prop_location');
-		$house_sleeping = $this->input->post('house_sleeping');
-		$date_from = "";
-		$date_to = "";
 		$season = $this->input->post('season');
 		$four = $this->input->post('four_price');
 		$five = $this->input->post('five_price');
@@ -26,15 +27,15 @@ class Add_holiday_rental extends CI_Controller {
 		$five_array = implode(",",$five);
 		$six_array = implode(",",$six);
 		$price = "";
+		$house_sleeping = $this->input->post('house_sleeping');
+		$date_from = $this->input->post('date_from');
+		$date_to = $this->input->post('date_to');
 		$guest_allowed = $this->input->post('guest_allowed');
 		$bedroom = $this->input->post('bedroom');
 		$bathroom = $this->input->post('bathroom');
 		$amenities = implode(",",$this->input->post('amenities'));
-		/*$prop_images = $this->input->post('prop_images');*/
 		$date = time();
-		$country = "France";
-		$rental_tags = implode(",",$this->input->post('property_tags'));
-		
+		$tags = implode("," ,$this->input->post('property_tags'));
 
 		$records = array(
 				"property_type" => 'rental',
@@ -55,18 +56,21 @@ class Add_holiday_rental extends CI_Controller {
 				"booked_date" => $date,
 				"status" => '1',
 				"location_country" => $country,
-				"tags" => $rental_tags,
+				"tags" => $tags,
 		);	
 
-		$insert_new_holiday_rental = $this->add_holiday_rental_m->add_new_rental_table($records);
-		if(sizeof($insert_new_holiday_rental) > 0){
-			
-			$last_holiday_rental_id = $insert_new_holiday_rental;
+
+		$update_new_rental_property = $this->edit_holiday_rental_m->update_property_rental_table($records,$rental_prop_id);
+		if(if(sizeof($update_new_rental_property) > 0){
+
+			/********************************************************/
+			$last_rent_property_id = $rental_prop_id;
 			$this->load->library('upload');
 		    $dataInfo = array();
 		    $files = $_FILES;
 		    $cpt = count($_FILES['userfile']['name']);
-		    for($i=0; $i<$cpt; $i++){           
+		    
+		    for($i=1; $i<$cpt; $i++){           
 		        
 		        $_FILES['userfile']['name']= $files['userfile']['name'][$i];
 		        $_FILES['userfile']['type']= $files['userfile']['type'][$i];
@@ -79,26 +83,25 @@ class Add_holiday_rental extends CI_Controller {
 		        $dataInfo[] = $this->upload->data();
 		    }
 		   
-		    for($i=0; $i<$cpt; $i++){
+		    for($i=1; $i<$cpt; $i++){
 		    	$data = array(
-			        'holiday_rental_id' => $last_holiday_rental_id,
+			        'holiday_rental_id' => $last_rent_property_id,
 			        'image' => $dataInfo[$i]['file_name'],
 			        'date' => time(),
 			        'status' => '1'
-			    );	
-			    $insert_new_holiday_rental_images = $this->add_holiday_rental_m->add_new_rental_image_table($data);	
+			    );
+			   
+			    $insert_new_rental_property_images = $this->edit_holiday_rental_m->add_new_rental_image_table($data);	
 		    }
-		    if($insert_new_holiday_rental_images){
-				$this->session->set_flashdata("add_holiday_rental_successfull", "The holiday rental has been added successfully...!");
-				redirect('add_holiday_rental');
-			}else{
-				$this->session->set_flashdata("add_holiday_rental_failed", "Failed to add new holiday rental...!");
-				redirect('add_holiday_rental');
-			}
+
+		    /***********************************************************************/
+
+			$this->session->set_flashdata("update_rent_prop_successfull", "The defined property has been updated successfully...!");
+				redirect('edit_holiday_rental/'.$rental_prop_id);
 		}else{
-			$this->session->set_flashdata("add_holiday_rental_failed", "Failed to add new holiday rental...!");
-			redirect('add_holiday_rental');
-		}
+			$this->session->set_flashdata("update_rent_prop_failed", "Failed to update the defined property for sale...!");
+			redirect('edit_holiday_rental/'.$rental_prop_id);
+		}	
 	}
 
 	private function set_upload_options()
@@ -107,12 +110,28 @@ class Add_holiday_rental extends CI_Controller {
 	    $config = array();
 	    $config['upload_path'] = 'uploads/';
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-
-
 	    return $config;
+	}
+
+		public function delete_image()
+	{
+		$this->load->model('edit_holiday_rental_m');
+		$image_id = $this->uri->segment(3);
+		$property_id = $this->uri->segment(4);
+		$delete_image = $this->edit_holiday_rental_m->img_dlt($image_id);
+		if($delete_image)
+		{
+			$this->session->set_flashdata("delt_img_sccful", "The image has been successfully deleted...!");
+			redirect('edit_holiday_rental/'.$property_id);
+		}
+		else
+		{
+			$this->session->set_flashdata("delt_img_failed", "Failed to delete the image...!");
+			redirect('edit_holiday_rental/'.$property_id);
+		}
 	}
 
 }
 
-/* End of file Add_holiday_rental.php */
-/* Location: ./application/controllers/Add_holiday_rental.php */
+/* End of file Edit_holiday_rental.php */
+/* Location: ./application/controllers/Edit_holiday_rental.php */
