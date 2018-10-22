@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		//exit;
-		$records=array('name'=>$username,'password'=>$password);
+		$records=array('email'=>$username,'password'=>$password);
 		$result = $this->login_m->login_function($records);
 		if($result > 0)
 		{

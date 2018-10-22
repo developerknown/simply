@@ -5,7 +5,7 @@ class Login_m extends CI_Model {
 
 	public function login_function($records)
 	{
-		$condition = "name =" . "'" . $records['name'] . "' AND " . "password =" . "'" . $records['password'] . "'AND " . "Status =" ."'". '1' ."'";
+		$condition = "email =" . "'" . $records['email'] . "' AND " . "password =" . "'" . $records['password'] . "'AND " . "status =" ."'". '1' ."'";
 		$this->db->select('*');
 		$this->db->from('user');
 		$this->db->where($condition);
@@ -15,7 +15,7 @@ class Login_m extends CI_Model {
 
 		public function get_id($records)
 	{
-		$condition = "name =" . "'" . $records['name'] . "' AND " . "password =" . "'" . $records['password'] . "'AND " . "Status =" ."'". '1' ."'";
+		$condition = "email =" . "'" . $records['email'] . "' AND " . "password =" . "'" . $records['password'] . "'AND " . "Status =" ."'". '1' ."'";
 		$this->db->select('*');
 		$this->db->from('user');
 		$this->db->where($condition);

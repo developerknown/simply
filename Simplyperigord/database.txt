@@ -1,0 +1,10 @@
+TP Username: clickrstop@ownspeech.in
+FTP server: ftp.ownspeech.in
+FTP & explicit FTPS 
+port:  21
+pass - Deepbratt123!
+
+user  -  ownsyesg_simply 
+database name - ownsyesg_simply 
+pass - simplyak47
+URL path - http://ownspeech.in/bimal/simply/

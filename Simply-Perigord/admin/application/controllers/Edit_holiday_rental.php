@@ -55,7 +55,7 @@ class Edit_holiday_rental extends CI_Controller {
 				"amenities" => $amenities,
 				"booked_date" => $date,
 				"status" => '1',
-				"location_country" => $country,
+				"location_country" => '',
 				"tags" => $tags,
 		);	
 
@@ -70,7 +70,7 @@ class Edit_holiday_rental extends CI_Controller {
 		    $files = $_FILES;
 		    $cpt = count($_FILES['userfile']['name']);
 		    
-		    for($i=1; $i<$cpt; $i++){           
+		    for($i=0; $i<$cpt; $i++){           
 		        
 		        $_FILES['userfile']['name']= $files['userfile']['name'][$i];
 		        $_FILES['userfile']['type']= $files['userfile']['type'][$i];
@@ -83,7 +83,7 @@ class Edit_holiday_rental extends CI_Controller {
 		        $dataInfo[] = $this->upload->data();
 		    }
 		   
-		    for($i=1; $i<$cpt; $i++){
+		    for($i=0; $i<$cpt; $i++){
 		    	$data = array(
 			        'holiday_rental_id' => $last_rent_property_id,
 			        'image' => $dataInfo[$i]['file_name'],
@@ -93,6 +93,7 @@ class Edit_holiday_rental extends CI_Controller {
 			   
 			    $insert_new_rental_property_images = $this->edit_holiday_rental_m->add_new_rental_image_table($data);	
 		    }
+		    
 
 		    /***********************************************************************/
 

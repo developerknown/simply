@@ -56,7 +56,8 @@ class Add_holiday_rental extends CI_Controller {
 				"status" => '1',
 				"location_country" => $country,
 				"tags" => $rental_tags,
-		);	
+		);
+
 
 		$insert_new_holiday_rental = $this->add_holiday_rental_m->add_new_rental_table($records);
 		if(sizeof($insert_new_holiday_rental) > 0){
@@ -85,9 +86,11 @@ class Add_holiday_rental extends CI_Controller {
 			        'image' => $dataInfo[$i]['file_name'],
 			        'date' => time(),
 			        'status' => '1'
-			    );	
+			    );
+
 			    $insert_new_holiday_rental_images = $this->add_holiday_rental_m->add_new_rental_image_table($data);	
 		    }
+		    
 		    if($insert_new_holiday_rental_images){
 				$this->session->set_flashdata("add_holiday_rental_successfull", "The holiday rental has been added successfully...!");
 				redirect('add_holiday_rental');
